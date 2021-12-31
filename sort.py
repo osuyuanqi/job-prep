@@ -45,7 +45,7 @@ def insSort(a):
 
 # *******************************************
 # 4.Merge Sort: O(nlogn)
-# devide into pieces and conquer
+# devide into pieces, compare and conquer
 # *******************************************
 
 def merSort(a):
@@ -72,7 +72,30 @@ def merge(left, right):
 
 numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
 
+# **********************************************************
+# 5. Quick Sort:
+# pick pivot, devide and conquer
+# Note: faster than merge sort, win at pick pivot randomly
+# **********************************************************
+
+import random
+def qsort(a):
+    if len(a) < 2: 
+        # single ele
+        return a
+    # random select after shuffle
+    random.shuffle(a)
+    pivot = a[0]
+    left = [i for i in a if i < pivot]
+    right = [i for i in a if i > pivot]
+    return qsort(left) + [pivot] + qsort(right)
+    
+
+numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
+
 print(bubSort(numbers[::]))
 print(selSort(numbers[::]))
 print(insSort(numbers[::]))
 print(merSort(numbers[::]))
+print(qsort(numbers[::]))
+
