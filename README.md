@@ -10,4 +10,4 @@ The small projects are for fun and knowlege accumulation only.
 
 - email: nice usage
 
-- [sort](https://visualgo.net/en/sorting): bubble sort, selection sort, insertion sort, [merge sort](https://towardsdatascience.com/how-to-implement-merge-sort-algorithm-in-python-4662a89ae48c)
+- [sort](https://visualgo.net/en/sorting): quick sort, [merge sort](https://towardsdatascience.com/how-to-implement-merge-sort-algorithm-in-python-4662a89ae48c), insertion sort, selection sort, bubble sort 
