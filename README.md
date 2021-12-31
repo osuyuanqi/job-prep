@@ -9,3 +9,5 @@ The small projects are for fun and knowlege accumulation only.
 - kindle convert->clean format
 
 - email->nice usage
+
+- bubble sort, selection sort, insertion sort, [merge sort](https://towardsdatascience.com/how-to-implement-merge-sort-algorithm-in-python-4662a89ae48c)
