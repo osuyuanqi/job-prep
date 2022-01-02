@@ -1,6 +1,6 @@
 # Python Projects
 
-The small projects are for fun and knowlege accumulation only.
+The small projects are for fun and knowledge accumulation only.
 
 - passcode & [binary search](https://www.geeksforgeeks.org/binary-search/)
 
@@ -10,4 +10,6 @@ The small projects are for fun and knowlege accumulation only.
 
 - email: nice usage
 
-- [sort](https://visualgo.net/en/sorting): quick sort, [merge sort](https://towardsdatascience.com/how-to-implement-merge-sort-algorithm-in-python-4662a89ae48c), insertion sort, selection sort, bubble sort 
+- [sort](https://visualgo.net/en/sorting): quick sort, [merge sort](https://towardsdatascience.com/how-to-implement-merge-sort-algorithm-in-python-4662a89ae48c), insertion sort, selection sort, bubble sort
+
+- LeetCode: enhance coding ability
