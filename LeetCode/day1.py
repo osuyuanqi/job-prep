@@ -1,5 +1,5 @@
 # **********************************************
-# 344 Reverse String
+# 344. Reverse String
 # **********************************************
 
 def reverseString(s: list[str]) -> None:
@@ -13,7 +13,7 @@ s = ["h","e","l","l","o"]
 # print(s)
 
 # **********************************************
-# 412: fizzBuzz
+# 412. fizzBuzz
 # Method1: mod operation is slower
 # **********************************************
 
@@ -67,3 +67,18 @@ def singleNumber2(nums: list[int]) -> int:
         res ^= i
     return res
 # nums = [4,1,2,1,2]
+
+# **********************************************
+# 198. House Robber:
+# can't robber adjacent,= could rober several 
+# partition, e.g.{7,10,11},{7,4,8,1}
+# **********************************************
+
+def rob(nums: list[int]) -> int:
+        first, second = 0, 0
+        for third in nums:
+            first, second = second, max(first + third, second)
+        return second
+# nums = [2,7,9,3,1]
+nums = [2,7,2,4,10,8,11,1]
+print(rob(nums))
