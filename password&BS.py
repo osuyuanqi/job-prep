@@ -6,7 +6,8 @@ import random
 a1 = [chr(i) for i in range(65,91)] # capital A-Z
 a2 = [chr(i) for i in range(97,123)] # a - z
 a3 = [str(i) for i in range(0,10)] # 0-9
-a = a1 + a2 + a3
+a4 = ["!","@","#","$","%","^","&","*"]
+a = a1 + a2 + a3 + a4
 random.shuffle(a)
 b = random.sample(a,8)
 c = ''.join(b)
