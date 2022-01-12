@@ -95,3 +95,8 @@ class LRUCache(object):
 # obj = LRUCache(capacity)
 # param_1 = obj.get(key)
 # obj.put(key,value)
+LRUCache cache = new LRUCache( 2  )
+
+cache.put(1, 1);
+cache.put(2, 2);
+cache.get(1);    
