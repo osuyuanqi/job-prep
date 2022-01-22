@@ -5,6 +5,10 @@
 
 - day2: #104 Maximum Depth of Binary Tree, #283 Move Zeroes, **#371(X) Sum of Two Integers, #206(X) Reverse Linked List: [animation](https://www.geeksforgeeks.org/reverse-a-linked-list/)**
 
-- day3: #171. Excel Sheet Column Number, #169. Majority Element, #13. Roman to Integer, #237(?) Delete Node in a Linked List, **#122(?) Best Time to Buy and Sell Stock II**
+- day3: #171. Excel Sheet Column Number, #169. Majority Element, #13. Roman to Integer, #237(?) Delete Node in a Linked List
 
-- day4:
+- day4: **#146(?). LRU Cache**
+
+- day5: #1304.Find N Unique Integers Sum up to Zero
+
+- day6: #1275. Find Winner on a Tic Tac Toe Game
