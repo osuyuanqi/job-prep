@@ -57,4 +57,23 @@ def tictactoe(moves: list[list[int]]) -> str:
 moves = [[0,0],[2,0],[1,1],[2,1],[2,2]]
 # moves = [[0,0],[1,1],[0,1],[0,2],[1,0],[2,0]]
 # moves = [[0,0],[1,1],[2,0],[1,0],[1,2],[2,1],[0,1],[0,2],[2,2]]
-print(tictactoe(moves))
+# print(tictactoe(moves))
+
+# **********************************************
+# 1822. Sign of the Product of an Array
+# **********************************************
+
+def arraySign(nums: list[int]) -> int:
+    a=1
+    for i in nums:
+        a *= i
+    if a > 0:
+        return 1
+    elif a < 0:
+        return -1
+    return 0
+
+# nums = [-1,-2,-3,-4,3,2,1]
+# nums = [1,5,0,2,-3]
+# nums = [-1,1,-1,1,-1]
+print(arraySign(nums))
