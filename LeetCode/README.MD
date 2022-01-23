@@ -12,3 +12,5 @@
 - day5: #1304.Find N Unique Integers Sum up to Zero
 
 - day6: #1275. Find Winner on a Tic Tac Toe Game, #1822. Sign of the Product of an Array
+
+- day7: #9. Palindrome Number
