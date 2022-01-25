@@ -111,10 +111,46 @@ def merge(intervals: list[list[int]]) -> list[list[int]]:
     return result
 # intervals = [[1,4],[4,5]]
 intervals = [[1,3],[2,6],[8,10],[15,18]]
-print(merge(intervals))
+# print(merge(intervals))
 
 
 # **********************************************
 # 200. Number of Islands
-# append the largest tails only
+# Depth Search Tree(DST), use # lable visited one
 # **********************************************
+
+def isIsland(i,j,grid):
+    if i<0 or i>=len(grid) or j<0 or j>=len(grid[0]):
+        return
+    if grid[i][j]!='1':
+        return
+    # the visited point was labled by # 
+    grid[i][j]='#'
+    print(grid)
+    # DST: vertical order
+    isIsland(i-1, j, grid)
+    isIsland(i+1, j, grid)
+    isIsland(i,j-1, grid)
+    isIsland(i, j+1, grid)
+    # DST: horizontal order
+    # isIsland(i, j+1, grid)
+    # isIsland(i,j-1, grid)
+    # isIsland(i+1, j, grid)
+    # isIsland(i-1, j, grid)
+def numIslands(grid: list[list[str]]) -> int:
+    count = 0
+    for i in range(len(grid)):
+        for j in range(len(grid[0])):
+            # print(i,j)
+            if grid[i][j] == '1':
+                count += 1
+                print(i,j,grid)
+                isIsland(i,j,grid)
+    return count
+grid = [
+  ["1","1","1","1","0"],
+  ["1","1","0","1","0"],
+  ["1","1","0","0","0"],
+  ["0","0","0","0","0"]
+]
+# print(numIslands(grid))
