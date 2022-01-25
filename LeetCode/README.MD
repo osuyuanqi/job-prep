@@ -15,4 +15,4 @@
 
 - day7: #9. Palindrome Number
 
-- day8: #1. Two Sum,**#716(?). Max Stack**,
+- day8: #1. Two Sum, **#716(?). Max Stack**, #56. Merge Intervals, #200. Number of Islands
