@@ -147,10 +147,30 @@ def numIslands(grid: list[list[str]]) -> int:
                 print(i,j,grid)
                 isIsland(i,j,grid)
     return count
-grid = [
-  ["1","1","1","1","0"],
-  ["1","1","0","1","0"],
-  ["1","1","0","0","0"],
-  ["0","0","0","0","0"]
-]
+# grid = [
+#   ["1","1","1","1","0"],
+#   ["1","1","0","1","0"],
+#   ["1","1","0","0","0"],
+#   ["0","0","0","0","0"]
+# ]
 # print(numIslands(grid))
+
+# **********************************************
+# 142. Linked List Cycle II
+# **********************************************
+
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+def detectCycle(head: [ListNode]) -> [ListNode]:
+    visited = set()
+    node = head
+    while node is not None:
+        # has circle
+        if node in visited:
+            return node
+        visited.add(node)
+        node = node.next
+    # no circle
+    return None
