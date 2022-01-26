@@ -1,3 +1,4 @@
+from pub_module import *
 # **********************************************
 # 160. Intersection of Two Linked Lists
 # hash/arithmetic method
@@ -8,10 +9,6 @@ class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
-# class ListNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
 # method 1: hash table,O(m + n)
 def getIntersectionNode(headA: Node, headB: Node) -> [Node]:
     a_node = set()
@@ -92,6 +89,7 @@ getIntersectionNode(llst.head,llst1.head)
 # 206. Reverse Linked List (shorten edition)
 # **********************************************
 
+# method1: iteration edition
 def reverseList( head: [Node]) -> [Node]:
         prev = None
         current = head
@@ -101,16 +99,24 @@ def reverseList( head: [Node]) -> [Node]:
             prev = current
             current = next
         return prev
+
+# method2: recursion edition
+def reverseList1(head: [Node]) -> [Node]:
+        if not head or not head.next:
+            return head
+        # print('bbbb',head,'aaaa')
+        
+        recursive = self.reverseList(head.next)
+        head.next.next= head
+        
+        # since head has two direction
+        head.next = None
+        return recursive
 # **********************************************
 # 19. Remove Nth Node From End of List
 # two pointers, arithmatic calculation
 # e.g. k = L-n, the order L-n = the reverse order n
 # **********************************************
-# Definition for singly-linked list.
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
 
 def removeNthFromEnd(head: [ListNode], n: int) -> [ListNode]:
         fast = slow = head

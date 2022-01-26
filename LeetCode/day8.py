@@ -1,3 +1,4 @@
+from pub_module import *
 # **********************************************
 # 1. Two Sum
 # hash,dic comes into mind
@@ -159,10 +160,6 @@ def numIslands(grid: list[list[str]]) -> int:
 # 142. Linked List Cycle II
 # **********************************************
 
-class ListNode:
-    def __init__(self, x):
-        self.val = x
-        self.next = None
 def detectCycle(head: [ListNode]) -> [ListNode]:
     visited = set()
     node = head
