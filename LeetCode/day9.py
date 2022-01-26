@@ -107,7 +107,9 @@ def reverseList1(head: [Node]) -> [Node]:
         # print('bbbb',head,'aaaa')
         
         recursive = self.reverseList(head.next)
-        head.next.next= head
+        # head.next: next part of head, let's say a
+        # head.next.next: the next elem after a, since thy've linked together by default
+        head.next.next = head
         
         # since head has two direction
         head.next = None
