@@ -17,4 +17,4 @@
 
 - day8: #1. Two Sum, **#716(?). Max Stack**, #56. Merge Intervals, #200. Number of Islands, #142. Linked List Cycle II
 
-- day9: #160. Intersection of Two Linked Lists,
+- day9: #160. Intersection of Two Linked Lists, #206. Reverse Linked List, #19. Remove Nth Node From End of List
