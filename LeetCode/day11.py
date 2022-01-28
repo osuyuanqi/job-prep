@@ -15,3 +15,22 @@ def reverseWords(s):
     return ' '.join(s2)
 s = '  he   wod'
 print(reverseWords(s))
+
+# **********************************************
+# 217. Contains Duplicate
+# **********************************************
+
+# method1: dic, hash
+def containsDuplicate(nums: list[int]) -> bool:
+    dic = {}
+    for i in nums:
+        if i not in dic:
+            dic[i] = i
+        else:
+            return True
+    return False
+
+# method 2: set,hash
+def containsDuplicate(nums: list[int]) -> bool:
+    return len(nums) != len(set(nums))
+
