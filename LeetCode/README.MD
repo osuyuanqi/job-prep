@@ -23,5 +23,5 @@
 
 - day11: #151. Reverse Words in a String, #217. Contains Duplicate
 
-- day12: #234. Palindrome Linked List
+- day12: #234. Palindrome Linked List, #Find the smallest missing positive integer (codility practice)
 
