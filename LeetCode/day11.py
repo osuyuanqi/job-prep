@@ -18,6 +18,7 @@ print(reverseWords(s))
 
 # **********************************************
 # 217. Contains Duplicate
+# could write one line
 # **********************************************
 
 # method1: dic, hash
