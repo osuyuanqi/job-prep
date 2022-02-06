@@ -4,4 +4,4 @@
   - **Partition tolerance** can't be avoided because the information can be transfer errors.
   - 
 - usually choose C over A
-
+- 
