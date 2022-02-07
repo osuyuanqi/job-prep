@@ -1,11 +1,16 @@
 ## [system design intv](https://www.geeksforgeeks.org/5-common-system-design-concepts-for-interview-preparation/)
 
+- vertical scaling-> parallel computing, [exhaust resources.](https://touchstonesecurity.com/horizontal-vs-vertical-scaling-what-you-need-to-know/#:~:text=Scaling%20or%20vertical%20scaling%20is,with%20a%20more%20powerful%20server)
+- Horizontal Scaling-> cheap hardware, slower multiple server.
+- Return the public IP address of the load balancer, and let the load balancer determin how to actually route data to the backend server (private address).
+
 #### Load Balancing
 - A load balancer’s job is to distribute traffic to many different servers to help with throughput, performance, latency, and scalability. You can put the load balancer in front of the clients (it can be also inserted to other places) and then the load balancer will route the incoming request across multiple web servers. In short, load balancers are traffic managers and they take responsibility for the availability and throughput of the system
 
 #### Caching
 - Accessing data from primary memory (RAM) is faster than accessing data from secondary memory (disk). By using the caching technique you can speed up the performance of your system. 
 - A lot of websites use CDN (content delivery network) which is a global network of servers. CDN caches static assets files like images, javascript, HTML, or CSS and it makes accessing very fast for the users. You can insert caching in on the client (e.g. browser storage), between the client and the server (e.g. CDNs), or on the server itself. 
+- memchached: store whatever you want in RAM (garbage collection: expire objects based on when they are put in). *just update.. If multiple times, probably move him from the front line..*
 
 #### Proxies
 - In general, when people use the term proxy they refer to ‘forward proxy’. ‘Forward proxy’ is designed to help users and it acts on behalf of (substitute for) the client in the interaction between client and server. 
