@@ -1,7 +1,7 @@
 from pub_module import *
 
 # **********************************************
-# #234. Palindrome Linked List
+# 234. Palindrome Linked List
 # even and odd condition
 # **********************************************
 

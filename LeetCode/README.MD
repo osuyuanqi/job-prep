@@ -25,3 +25,4 @@
 
 - day12: #234. Palindrome Linked List, #Find the smallest missing positive integer (codility practice)
 
+- day13: #21. Merge Two Sorted Lists, #2. Add Two Numbers
