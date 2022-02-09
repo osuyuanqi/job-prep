@@ -41,3 +41,33 @@ def addTwoNumbers(self, l1: [ListNode], l2: [ListNode]) -> [ListNode]:
         p.next = ListNode(val)
         p = p.next
     return dummy.next
+
+# **********************************************
+# 144. Binary Tree Preorder Traversal
+# **********************************************
+def preorderTraversal(self, root: [TreeNode]) -> list[int]:
+        # if root == None:
+        #     return []
+        # stack, output = [root,], []
+        # while stack:
+        #     print(root,'xxx')
+        #     root = stack.pop()
+        #     print(root,'yyy')            
+        #     if root:
+        #         output.append(root.val)
+        #         if root.right:
+        #             stack.append(root.right)
+        #         if root.left:
+        #             stack.append(root.left)     
+        # return output
+        
+#         if root:
+#             return []
+        output = []
+        def recurs(root):
+            if root:
+                output.append(root.val)
+                recurs(root.left)
+                recurs(root.right)
+        recurs(root)
+        return output
