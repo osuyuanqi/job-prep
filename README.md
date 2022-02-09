@@ -6,4 +6,4 @@
 
 - LeetCode: enhance coding ability
 
-- system_design: will prepare
+- system_design: preparing
