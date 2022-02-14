@@ -18,16 +18,33 @@ def inorderTraversal_recursive(root: [TreeNode]) -> list[int]:
 def inorderTraversal_iterative(root: [TreeNode]) -> list[int]:
     res, stack = [], []
     while stack or root:
+        # stack stores all the leftnodes
         while root:
             stack.append(root)
             root = root.left
         print(stack)
-        # pop the node only, without the rest tree
+        # pop the current node only, without the rest tree
+        # do pop() each iteration
         node = stack.pop()
         res.append(node.val)
-        # explore the right node
+        # explore the right ROOT, not node
         root = node.right
     return res
+# **********************************************
+# 145. Binary Tree Postorder Traversal
+# **********************************************
+
+# recursive
+def postorderTraversal(self, root: [TreeNode]) -> List[int]:
+	def post_order(root, res):
+	    if root:
+	        post_order(root.left,res)
+	        post_order(root.right,res)
+	        res.append(root.val)
+	r = []
+	post_order(root, r)
+	return r
+
 
 if __name__ == "__main__":
 	# root = [1,None,2,3]
