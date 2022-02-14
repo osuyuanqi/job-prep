@@ -25,6 +25,7 @@
 
 - day12: #234. Palindrome Linked List, #Find the smallest missing positive integer (codility practice)
 
-- day13: #21. Merge Two Sorted Lists, #2. Add Two Numbers, badge pass validation
+- day13: #21. Merge Two Sorted Lists, #2. Add Two Numbers, badge pass validation(having bugs)
 
 - day14: #94. Binary Tree Inorder Traversal, #145. Binary Tree Postorder Traversal, #102. Binary Tree Level Order Traversal
+
