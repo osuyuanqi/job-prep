@@ -40,7 +40,8 @@
     - There are mainly two ways to shard your database- horizontal sharding and vertical sharding. 
     - In vertical sharding, each table -> a new machine.
     - horizontal partitioning depends on one key which is an attribute of the data you’re storing to partition data. 
-=========
+ 
+ =========
 
 ## Storage Scalability 
 
