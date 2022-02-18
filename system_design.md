@@ -40,3 +40,9 @@
     - There are mainly two ways to shard your database- horizontal sharding and vertical sharding. 
     - In vertical sharding, each table -> a new machine.
     - horizontal partitioning depends on one key which is an attribute of the data you’re storing to partition data. 
+=========
+
+## Storage Scalability 
+
+- Do note that no design is correct or wrong. There are just good designs and bad designs which heavily depend on the use case. 
+- UDP is a much faster, simpler, and efficient protocol, however, retransmission of lost data packets is only possible with TCP.
