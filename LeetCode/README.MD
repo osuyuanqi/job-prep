@@ -31,4 +31,4 @@
 
 - day15: #383. Ransom Note
 
-- day16: #724. Find Pivot Index, #112. Path Sum, #104. Maximum Depth of Binary Tree,
+- day16: #724. Find Pivot Index, #112. Path Sum, #104. Maximum Depth of Binary Tree, #237. Delete Node in a Linked List

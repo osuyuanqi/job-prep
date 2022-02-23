@@ -49,6 +49,18 @@ def hasPathSum(self, root: [TreeNode], targetSum: int) -> bool:
             return 0
         return max(self.maxDepth(root.left),self.maxDepth(root.right))+1
 
+# **********************************************
+# 237. Delete Node in a Linked List
+# **********************************************
+
+def deleteNode(self, node):
+        """
+        :type node: ListNode
+        :rtype: void Do not return anything, modify node in-place instead.
+        """
+        node.val = node.next.val
+        # node.next is the next value,node.next.next is the node
+        node.next = node.next.next
 
 if __name__ == "__main__":
 	print('test')
