@@ -58,9 +58,16 @@ def deleteNode(self, node):
         :type node: ListNode
         :rtype: void Do not return anything, modify node in-place instead.
         """
+        
+
+        # node.next is the next value, the type is TreeNode
+        # node.next.next is the node.next's next value, also TreNode
         node.val = node.next.val
-        # node.next is the next value,node.next.next is the node
         node.next = node.next.next
+
+        print("===",node)#=== ListNode{val: 1, next: ListNode{val: 1, next: ListNode{val: 9, next: None}}}
+        print("aaa",node.next)#aaa ListNode{val: 1, next: ListNode{val: 9, next: None}}
+        print("bbb",node.next.next)# bbb ListNode{val: 9, next: None}
 
 if __name__ == "__main__":
 	print('test')
