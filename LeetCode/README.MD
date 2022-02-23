@@ -30,3 +30,5 @@
 - day14: #94. Binary Tree Inorder Traversal, #145. Binary Tree Postorder Traversal, #102. Binary Tree Level Order Traversal
 
 - day15: #383. Ransom Note
+
+- day16: #724. Find Pivot Index
