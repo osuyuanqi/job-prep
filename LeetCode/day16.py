@@ -1,5 +1,7 @@
+from pub_module import TreeNode
 # **********************************************
 # 724. Find Pivot Index
+# function sum tips
 # **********************************************
 
 # method1: math tip
@@ -28,6 +30,17 @@ def pivotIndex(self, nums: list[int]) -> int:
         if left_sum == right_sum:
             return i
     return -1
+# **********************************************
+# 112. Path Sum
+# **********************************************
+
+def hasPathSum(self, root: [TreeNode], targetSum: int) -> bool:
+    if root == None:
+        return False
+    if not root.left and not root.right:
+        return root.val == targetSum
+    return  self.hasPathSum(root.left,targetSum - root.val) or self.hasPathSum(root.right, targetSum -root.val)
+
 
 if __name__ == "__main__":
 	print('test')
