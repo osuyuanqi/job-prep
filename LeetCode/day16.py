@@ -40,6 +40,14 @@ def hasPathSum(self, root: [TreeNode], targetSum: int) -> bool:
     if not root.left and not root.right:
         return root.val == targetSum
     return  self.hasPathSum(root.left,targetSum - root.val) or self.hasPathSum(root.right, targetSum -root.val)
+# **********************************************
+# 104. Maximum Depth of Binary Tree
+# **********************************************
+
+ def maxDepth(self, root: Optional[TreeNode]) -> int:
+        if root == None:
+            return 0
+        return max(self.maxDepth(root.left),self.maxDepth(root.right))+1
 
 
 if __name__ == "__main__":
