@@ -14,10 +14,16 @@ def mergeTwoLists(self, list1: [ListNode], list2: [ListNode]) -> [ListNode]:
             p.next = list2
             list2 = list2.next
         p = p.next
+    # not while since the rest linkedlist no need append node one by one
     if list1:
         p.next = list1
     if list2:
         p.next = list2
+    # also works
+    # while list2:
+    #     p.next = list2
+    #     list2 = list2.next
+    #     p = p.next
     return dummy.next
 # **********************************************
 # 2. Add Two Numbers

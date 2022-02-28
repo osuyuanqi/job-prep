@@ -50,5 +50,8 @@ def reverse1(x:int)->int:
         x = x // 10
         # print(x,res)
     return 0 if res > pow(2,31) else sign*res
-a = -123
-print(reverse1(a))
+# a = -123
+# print(reverse1(a))
+
+if __name__ == '__main__':
+    print('tst')
