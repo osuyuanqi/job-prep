@@ -53,5 +53,39 @@ def reverse1(x:int)->int:
 # a = -123
 # print(reverse1(a))
 
+# **********************************************
+# 125. Valid Palindrome
+# **********************************************
+
+# way1:short version
+def isPalindrome(s: str) -> bool:
+    s= [i for i in s.lower() if i.isalnum()]
+    return s == s[::-1]
+s = "A man, a plan, a canal: Panama" 
+
+# way2:shrink
+def isPalindrome(s: str) -> bool:
+    s = [i for i in s.lower() if i.isalnum()]
+    l,h = 0, len(s)-1
+    while l<h:
+        if s[l]!= s[h]:
+            return False
+        l+=1
+        h-=1
+    return True   
+print(isPalindrome(s))
+
+# **********************************************
+# 88. Merge Sorted Array
+# **********************************************
+
+def merge(nums1: list[int], m: int, nums2: list[int], n: int) -> None:
+    """
+    Do not return anything, modify nums1 in-place instead.
+    """
+    for i in range(n):
+        nums1[m + i] = nums2[i]
+    nums1.sort()
+
 if __name__ == '__main__':
     print('tst')
