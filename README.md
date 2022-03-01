@@ -2,8 +2,8 @@
 
 - kindle convert: clean format
 
-- email: bunch email sends,
-[gmail->open apppasswords setting](https://security.google.com/settings/security/apppasswords),personalize intro + [pdf attached](https://github.com/CodeIt-Bro/Python-Email-Scripts/blob/master/PDFEmail.py)
+- email: referral ask, personalize intro + [pdf attached](https://github.com/CodeIt-Bro/Python-Email-Scripts/blob/master/PDFEmail.py)
+  - if gmail, Security->open "Less secure app access".
 
 
 - LeetCode: enhance coding ability
