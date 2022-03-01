@@ -1,8 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <style type="text/css">
+        body {
+            font-family: "Times New Roman", Times, serif;
+        }
+        /*#job-pos{
+            color: red;
+        }
+        #com-name{
+            color: purple;
+        }
+        .cand{
+            color: green;
+        }*/
+    </style>
 </head>
 <body>
-    This is the email test from $name. Hope $name could learn the necessary $language when interviewing.
+    <div>
+        <div>
+            Hi $referral,
+        </div>
+        <div>
+            <br>
+            Nice to meet you. I’m <span class="cand">$candidate. </span>This is my introduction.
+        </div>
+
+        <div>
+            <h3>
+               Job Links
+            </h3>
+            <p>
+                <a href="$job_link1">$job_name1</a><br>
+                <a href="$job_link2">$job_name2</a><br>
+                <a href="$job_link3">$job_name3</a>
+            </p>
+        </div>
+        
+        <div>
+            <h3>
+               Contact Methods
+            </h3>
+            <p>$con_num<br>
+            <a href="mailto:$your_email">$your_email</a><br>
+            <a href = "$LinkedIn">$LinkedIn</a>
+            </p>
+
+        </div>
+
+        <h3>Third Person</h3>
+        <div>
+            I’d like to recommend <span class="cand">$candidate</span> for $company_name.
+        </div>
+        <div>
+            <br>
+            <span class="cand">$candidate</span>’s expertise in <span id="job-pos">$job_position</span> fit the <span id = "com-name">$company_name</span> very well. So I believe he is the exact candidate $company_name is looking for, and I highly recommend him for this position.
+        </div>
+    </div>
 </body>
 </html>
