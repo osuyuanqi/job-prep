@@ -85,7 +85,7 @@ def merge(nums1: list[int], m: int, nums2: list[int], n: int) -> None:
     """
     for i in range(n):
         nums1[m + i] = nums2[i]
-    # NOT nums1=nums1.sort(),since the left nums1 doesn't influence the right nums1 in memory address
+    # NOT: nums1=nums1.sort(),since the left nums1 doesn't influence the right nums1 in memory address
     nums1.sort()
 
 if __name__ == '__main__':
