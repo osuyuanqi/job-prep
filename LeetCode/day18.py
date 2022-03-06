@@ -31,17 +31,41 @@ def wordBreak(s: str, wordDict: list[str]) -> bool:
 				break
 	# print(dp)
 	return dp[-1] == 1
-s = "leetcode"
-wordDict = ["leet","code"]
-print(wordBreak(s,wordDict))
+# s = "leetcode"
+# wordDict = ["leet","code"]
+# print(wordBreak(s,wordDict))
 
 # **********************************************
 # Ex: break tip->terminate current SINGLE loop
 # **********************************************
-for i in range(5):
-	for j in range(3):
-		print(i,j)
-		break
+# for i in range(5):
+# 	for j in range(3):
+# 		print(i,j)
+# 		break
 
+# **********************************************
+# 171. Excel Sheet Column Number
+# **********************************************
+
+# way1
+def titleToNumber(columnTitle: str) -> int:
+	num = 0
+	dic = {}
+	for i in range(1,27):
+		dic[chr(64+i)] = i
+	a = columnTitle[::-1]
+	for i in range(len(a)):
+		num+= dic[a[i]]*26**i
+	return num
+
+# way2
+def titleToNumber(columnTitle: str) -> int:
+	a = list(columnTitle)[::-1]
+	rst = 0
+	for i in range(len(a)):
+	    rst += (ord(a[i]) - 64) * (26**i)
+	return rst
+
+print(titleToNumber("ZY"))
 if __name__ == '__main__':
     print('tst')		
