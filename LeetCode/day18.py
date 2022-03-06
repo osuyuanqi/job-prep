@@ -34,6 +34,7 @@ def wordBreak(s: str, wordDict: list[str]) -> bool:
 s = "leetcode"
 wordDict = ["leet","code"]
 print(wordBreak(s,wordDict))
+
 # **********************************************
 # Ex: break tip->terminate current SINGLE loop
 # **********************************************
@@ -41,3 +42,6 @@ for i in range(5):
 	for j in range(3):
 		print(i,j)
 		break
+
+if __name__ == '__main__':
+    print('tst')		
