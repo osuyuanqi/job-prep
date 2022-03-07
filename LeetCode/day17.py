@@ -31,6 +31,12 @@ def twoSum(numbers: list[int], target: int) -> list[int]:
 # 15. 3Sum
 # **********************************************
 
+def threeSum(nums: list[int]) -> list[list[int]]:
+    output = []
+    return output
+
+nums = [-1,0,1,2,-1,-4]
+threeSum(nums)
 # **********************************************
 # 7. Reverse Integer
 # **********************************************
@@ -73,7 +79,7 @@ def isPalindrome(s: str) -> bool:
         l+=1
         h-=1
     return True   
-print(isPalindrome(s))
+# print(isPalindrome(s))
 
 # **********************************************
 # 88. Merge Sorted Array

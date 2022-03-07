@@ -84,7 +84,7 @@ def getSum(a: int, b: int) -> int:
 	    b=carry
 	max_int = 0x7FFFFFFF
 	return a if a<max_int else ~(a^mask)
-def getSum1(a: int, b: int) -> int:
+def getSum(a: int, b: int) -> int:
 	mask=0xffffffff
 	while b & mask:
 	    a, b = (a ^ b), (a & b) << 1
