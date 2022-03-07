@@ -66,6 +66,38 @@ def titleToNumber(columnTitle: str) -> int:
 	    rst += (ord(a[i]) - 64) * (26**i)
 	return rst
 
-print(titleToNumber("ZY"))
+# print(titleToNumber("ZY"))
+
+# **********************************************
+# 371. Sum of Two Integers
+# binary operations: positive+negative cases
+# **********************************************
+
+# mask->set bound,since python is no length limitation
+def getSum(a: int, b: int) -> int:
+	mask = 0xFFFFFFFF
+	while b!=0:
+	    sum1 = (a^b)&mask
+	    carry = ((a&b)<<1)&mask
+	    # print(bin(sum1),bin(carry))
+	    a =sum1
+	    b=carry
+	max_int = 0x7FFFFFFF
+	return a if a<max_int else ~(a^mask)
+def getSum1(a: int, b: int) -> int:
+	mask=0xffffffff
+	while b & mask:
+	    a, b = (a ^ b), (a & b) << 1
+	# print(a,b)  
+	if b > 0:
+	    return a & mask
+	else:
+	    return a
+
+# test cases:
+# {a = 5;b=1},{a=8;b=-12},{a=-8;b=12}
+a=-8;b=-12
+print(getSum(a,b))
+
 if __name__ == '__main__':
     print('tst')		
