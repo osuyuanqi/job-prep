@@ -31,12 +31,39 @@ def twoSum(numbers: list[int], target: int) -> list[int]:
 # 15. 3Sum
 # **********************************************
 
+# brute force
 def threeSum(nums: list[int]) -> list[list[int]]:
-    output = []
+    if len(nums)==0:
+        return []
+    output = set()
+    for i in range(len(nums)):
+        for j in range(i+1,len(nums)):
+            for k in range(i+2,len(nums)):
+                # print(nums[i],nums[j],nums[k])
+                if nums[i]+nums[j]== -nums[k] and i!=j and j!=k and i!=k:
+                    output.add(tuple(sorted([nums[i],nums[j],nums[k]])))
+                    break
+    # print(list(output))
+    return list(output)
+# hash tip
+def threeSum(nums: list[int]) -> list[list[int]]:
+    nums.sort()
+    output =set()
+    for i in range(len(nums)):
+        target = -nums[i]
+        l,h = i+1,len(nums)-1
+        while l < h:
+            if nums[l]+nums[h] == target:
+                output.add(tuple([nums[l],nums[h],-target]))
+            if nums[l]+nums[h] < target:
+                l+=1
+            else:
+                h-=1
+    # print(output)
     return output
-
 nums = [-1,0,1,2,-1,-4]
-threeSum(nums)
+# nums = [0]
+# print(threeSum(nums))
 # **********************************************
 # 7. Reverse Integer
 # **********************************************
