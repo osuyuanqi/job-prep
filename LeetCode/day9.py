@@ -97,6 +97,7 @@ def reverseList( head: [Node]) -> [Node]:
             next = current.next
             current.next = prev
             prev = current
+            # current node is still exist
             current = next
         return prev
 

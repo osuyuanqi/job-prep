@@ -62,6 +62,7 @@ def deleteNode(self, node):
 
         # node.next is the next value, the type is TreeNode
         # node.next.next is the node.next's next value, also TreNode
+        # change val first, or it can't be change if moved to another node
         node.val = node.next.val
         node.next = node.next.next
 
