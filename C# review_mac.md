@@ -8,6 +8,7 @@
 for (stat 1; stat 2; stat 3) 
 {
   // stat execute once only
+  string[] cars;// define array
 }
  ```
 -
