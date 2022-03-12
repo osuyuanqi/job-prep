@@ -1,2 +1,3 @@
-1. creat new project command:
-  - dotnet new console -o demo
+## command list
+  - dotnet new console -o demo //creat new project 
+  - dotnet run // run proj a.cs, in the same folder
