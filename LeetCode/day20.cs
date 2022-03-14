@@ -1,13 +1,14 @@
-/***********************************************
- 28. Implement strStr()
-*/ 
 using System;
 
 namespace HelloWorld
 {
     class Program
     {
-        // while way
+        /***********************************************
+         28. Implement strStr()
+         ***********************************************/
+
+        // way1: while
         static int StrStr(string haystack, string needle)
         {   
             int l1 = haystack.Length;
@@ -28,7 +29,7 @@ namespace HelloWorld
              }
             return -1;
     }
-    // for loop way
+    // way2: for loop
     static int StrStr2(string haystack, string needle)
         {   
             int l1 = haystack.Length;
@@ -43,11 +44,21 @@ namespace HelloWorld
             }
             return -1;
         }
+        /***********************************************
+         53. Maximum Subarray
+         ***********************************************/
+        static int MaxSubArray(int[] nums) {
+                return 0;
+            }
+
         static void Main(string[] args)
         {
-            string haystack = "mississippi",needle="issipi";
-            int a = StrStr(haystack, needle);
-            Console.WriteLine(a);
+            // 28. Implement strStr()
+            // string haystack = "hello",needle="ll";
+            // Console.WriteLine(StrStr(haystack, needle));
+            // 53. Maximum Subarray
+            int[] nums = {-2,1,-3,4,-1,2,1,-5,4};
+            Console.WriteLine(MaxSubArray(nums));
         }
 
     }
