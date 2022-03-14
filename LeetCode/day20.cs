@@ -7,6 +7,7 @@ namespace HelloWorld
 {
     class Program
     {
+        // while way
         static int StrStr(string haystack, string needle)
         {   
             int l1 = haystack.Length;
@@ -27,6 +28,21 @@ namespace HelloWorld
              }
             return -1;
     }
+    // for loop way
+    static int StrStr2(string haystack, string needle)
+        {   
+            int l1 = haystack.Length;
+            int l2 = needle.Length;
+            // Console.WriteLine(l2);
+            // Console.WriteLine(haystack.Substring(1,l2));
+            if (l2 == 0) return 0;
+            if (l1 == 0) return -1;
+            for (int i = 0; i< l1-l2+1; i++){
+                if (haystack.Substring(i,l2) == needle)
+                    return i;
+            }
+            return -1;
+        }
         static void Main(string[] args)
         {
             string haystack = "mississippi",needle="issipi";
