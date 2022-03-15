@@ -37,4 +37,6 @@
 
 - day18: #139. Word Break **DP**, #371. Sum of Two Integers
 
-- day20: #28. Implement strStr()
+- day19: **(Convert to JS)** #53. Maximum Subarray, #38. Count and Say
+
+- day20: **(Convert to C#)** #28. Implement strStr()
