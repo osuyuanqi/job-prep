@@ -161,6 +161,7 @@ var isHappy1 = function(n) {
 var isHappy =function(n){
     let squ = {"0":0,"1":1,"2":4,"3":9,"4":16,"5":25,"6":36,"7":49,"8":64,"9":81};
     let memo = new Set();
+    // refer to tips below: negative values->NaN->jump out of the loop
     while(!memo.has(n)){
         memo.add(n);
         let strN = n.toString();
@@ -170,6 +171,23 @@ var isHappy =function(n){
         }
         if(n==1)return true;
     }
+    console.log(memo);
     return false;
 }
-// console.log(isHappy(19))
+// console.log(isHappy(11))
+
+/*************************************************
+ * tips: set/dic sees NaN as a number type value
+ ************************************************/
+
+let dic = {0:1}
+let set = new Set()
+for(let i =0;i<3;i++)
+{   dic[i]+=1;
+    set.add(dic[i])
+    console.log(dic,set)
+}
+let a=1+NaN;
+console.log(typeof 1+NaN)//numberNaN
+console.log(typeof NaN)//number
+console.log(a)//NaN
