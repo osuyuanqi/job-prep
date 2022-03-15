@@ -73,4 +73,59 @@ var countAndSay1 = function(n,res = "1") {
     return countAndSay(n-1,temp+count+presentValue);
 }
 
-console.log(countAndSay(4));
+// console.log(countAndSay(4));
+
+/*************************************************
+ * 242. Valid Anagram
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ ************************************************/
+
+// dictionary method 1
+var isAnagram1 = function(s, t) {
+    if (s.length!=t.length)return false;
+    let dict ={};
+    for(let i =0;i<s.length;i++){
+        // console.log(dict)
+        if (s[i] in dict){
+            dict[s[i]]++;
+            console.log(dict[s[i]])
+        }
+        else
+            dict[s[i]]=1;
+    }
+    // console.log(dict);
+    for(let j =0;j<t.length;j++){
+        // console.log(dict)
+        if (t[j] in dict){
+            dict[t[j]]--;
+        }
+        else
+            return false;
+    }
+    for(const k in dict)
+    {
+        if(dict[k]!=0)return false;
+    }
+    
+    console.log(dict);
+    return true;
+};
+// dic method2: save one operation
+var isAnagram = function(s, t) {
+    if (t.length !== s.length) return false;
+    const counts = {};
+    for (let c of s) {
+        counts[c] = (counts[c] || 0) + 1;
+    }
+    for (let c of t) {
+        // console.log(counts[c],!counts[c],c,t,counts)
+        // do this after got 0 last time. return false since it probe the element again.
+        if (!counts[c]) return false;
+        counts[c]--;
+    }
+    return true;
+};
+let s = "rat", t = "aar";
+console.log(isAnagram(s,t));
