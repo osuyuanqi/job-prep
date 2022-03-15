@@ -112,6 +112,7 @@ var isAnagram1 = function(s, t) {
     console.log(dict);
     return true;
 };
+
 // dic method2: save one operation
 var isAnagram = function(s, t) {
     if (t.length !== s.length) return false;
@@ -127,5 +128,48 @@ var isAnagram = function(s, t) {
     }
     return true;
 };
-let s = "rat", t = "aar";
-console.log(isAnagram(s,t));
+// let s = "rat", t = "aar";
+// console.log(isAnagram(s,t));
+
+/*************************************************
+ * 202. Happy Number
+ * @param {number} n
+ * @return {boolean}
+ * Note: if exists in memo,then loop and terminate,since the square values have fixed value
+ *************************************************/
+// way1: memo as terminate
+var isHappy1 = function(n) {
+    let memo = new Set();
+    while (n>0&&!memo.has(n)) {
+        memo.add(n);
+        strN = n.toString()
+        let res = 0;
+        for(let i in strN){
+            res+= parseInt(strN[i])**2
+        }
+        // console.log(res)
+        if (res==1) 
+            return true;
+        n = res;
+        // console.log(n)
+    }
+    // console.log(memo)
+    return false;
+};
+
+// way2: memo+pre-square method
+var isHappy =function(n){
+    let squ = {"0":0,"1":1,"2":4,"3":9,"4":16,"5":25,"6":36,"7":49,"8":64,"9":81};
+    let memo = new Set();
+    while(!memo.has(n)){
+        memo.add(n);
+        let strN = n.toString();
+        n = 0;
+        for(let i=0; i<strN.length;i++){
+            n+=squ[strN[i]];
+        }
+        if(n==1)return true;
+    }
+    return false;
+}
+// console.log(isHappy(19))
