@@ -86,7 +86,6 @@ var climbStairs = function(n) {
 
 // console.log(climbStairs(45))
 
-
 /*************************************************
  * tips: for..in->attibute,for..of->value
  ************************************************/
