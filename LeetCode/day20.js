@@ -175,19 +175,3 @@ var isHappy =function(n){
     return false;
 }
 // console.log(isHappy(11))
-
-/*************************************************
- * tips: set/dic sees NaN as a number type value
- ************************************************/
-
-let dic = {0:1}
-let set = new Set()
-for(let i =0;i<3;i++)
-{   dic[i]+=1;
-    set.add(dic[i])
-    console.log(dic,set)
-}
-let a=1+NaN;
-console.log(typeof 1+NaN)//numberNaN
-console.log(typeof NaN)//number
-console.log(a)//NaN

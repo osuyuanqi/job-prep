@@ -43,4 +43,4 @@
 
 - day21: #217. Contains Duplicate, #118. Pascal's Triangle, #70. Climbing Stairs
 
-- day22: #268. Missing Number, #155. Min Stack,
+- day22: #268. Missing Number, #350. Intersection of Two Arrays II, #155. Min Stack,

@@ -36,8 +36,53 @@ var missingNumber = function(nums) {
     }
 }
 let nums = [3,0,1,2]
-console.log(missingNumber(nums));
+// console.log(missingNumber(nums));
 
+/*************************************************
+ * 237. Delete Node in a Linked List
+ ***********************************************/
+
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+/**
+ * @param {ListNode} node
+ * @return {void} Do not return anything, modify node in-place instead.
+ */
+var deleteNode = function(node) {
+    node.val=node.next.val;
+    node.next = node.next.next;
+};
+
+/*************************************************
+ 350. Intersection of Two Arrays II
+ ***********************************************/
+
+/**
+ * @param {number[]} nums1
+ * @param {number[]} nums2
+ * @return {number[]}
+ */
+var intersect = function(nums1, nums2) {
+     let arr = [],dict={}
+     for(let i of nums1){
+        dict[i]= dict[i]?dict[i]++:1
+     }
+     console.log(dict)
+     for(let j of nums2){
+        if (dict[j]){
+            dict[j]--;
+            arr.push(j)
+        }
+     }
+     return arr;
+    }
+let  nums1 =  [4,9,5], nums2 = [9,4,9,8,4]
+console.log(intersect(nums1,nums2));
 /*************************************************
  * 155. Min Stack
  ***********************************************/
