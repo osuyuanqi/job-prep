@@ -41,4 +41,5 @@
 
 - day20: **(Convert to JS)** #53. Maximum Subarray, #38. Count and Say,#242. Valid Anagram,#202. Happy Number
 
-- day21: #217. Contains Duplicate,
+- day21: #217. Contains Duplicate,#118. Pascal's Triangle, #70. Climbing Stairs
+
