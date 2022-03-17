@@ -8,7 +8,15 @@ for(let i =0;i<3;i++)
 {   dic[i]+=1;
     set.add(dic[i])
 }
-console.log(dic,set);
+// console.log(dic,set);
+// Set->Array
+nums = [9,4,9,8,4]
+set=new Set(nums)
+// console.log(set,Array.from(set));
+
+/*************************************************
+ * tips: array usage
+ ************************************************/
 
 // array in->index
 let arr=[2,3,4]
