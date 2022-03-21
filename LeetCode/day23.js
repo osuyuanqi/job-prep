@@ -149,3 +149,67 @@ var mergeKLists = function(lists) {
     }
     return root||null;
 };
+
+/*************************************************
+ * 121. Best Time to Buy and Sell Stock
+ ***********************************************/
+
+/**
+ * @param {number[]} prices
+ * @return {number}
+ */
+var maxProfit = function(prices) {
+let i=0,sell=0,buy=0,m=0,profit=0;
+
+while(i<prices.length-1){
+    if(i<prices.length&&prices[i]>=prices[i+1])
+        i++;
+        buy=prices[i];
+    if(i<prices.length&&prices[i]<prices[i+1])    
+        i++;
+        sell=prices[i];
+
+    profit=sell-buy;
+// console.log(sell,buy);
+
+    if(profit>m)m=profit;
+}
+return m;
+}
+var prices=[7,1,5,3,6,4]
+// console.log(maxProfit(prices));
+/*************************************************
+ * 122. Best Time to Buy and Sell Stock II
+ ***********************************************/
+
+/**
+ * @param {number[]} prices
+ * @return {number}
+ */
+var maxProfit = function(prices) {
+    let i =0,profit=0,buy=0,sell=0,N=prices.length-1;
+    while(i<N){
+        if(i<N&&prices[i]>=prices[i+1])
+            i++;
+        buy = prices[i];
+
+        if(i<N&&prices[i+1]>prices[i])
+            i++;
+        sell=prices[i];
+        profit+=sell-buy;
+    }
+
+    return profit;
+};
+// O(n),add every profits together
+var maxProfit = function(prices) {
+    let profits=0;
+    for(let i=0;i<prices.length-1;i++){
+        let a = prices[i+1]-prices[i]
+        if(prices[i+1]>prices[i])
+            profits+=a;
+    }
+    return profits;
+}
+// var prices = [7,1,5,3,6,4]
+console.log(maxProfit(prices));
