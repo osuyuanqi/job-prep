@@ -4,11 +4,21 @@
 // dic/set added
 let dic = {0:1}
 let set = new Set()
+let map = new Map();
 for(let i =0;i<3;i++)
 {   dic[i]+=1;
-    set.add(dic[i])
+    set.add(dic[i]);
+    // map[dic[i]]=i;just set property,can't access
+    map.set(i,"[map]"+i)
 }
-// console.log(dic,set);
+console.log(dic,"==",set,"==",map);
+console.log(0 in dic)
+console.log(set.has(2))
+console.log(map.has(2))
+
+for(let i =0;i<map.size;i++)
+console.log(map.get(i),"===")
+
 // Set->Array
 nums = [9,4,9,8,4]
 set=new Set(nums)

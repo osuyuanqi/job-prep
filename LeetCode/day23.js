@@ -170,7 +170,7 @@ var maxProfit = function(prices) {
     return profits;
 }
 var prices=[7,1,5,3,6,4]
-console.log(maxProfit(prices));
+// console.log(maxProfit(prices));
 /*************************************************
  * 122. Best Time to Buy and Sell Stock II
  ***********************************************/
@@ -206,3 +206,34 @@ var maxProfit = function(prices) {
 }
 // var prices = [7,1,5,3,6,4]
 // console.log(maxProfit(prices));
+
+
+/*************************************************
+ * 387. First Unique Character in a String
+ ***********************************************/
+
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var firstUniqChar = function(s) {
+     var map=new Map();
+    for(i=0;i<s.length;i++){
+         if(map.has(s[i])){
+             map.set(s[i],2);
+         }
+         else{
+             map.set(s[i],1);
+         }
+     }
+
+    for(i=0;i<s.length;i++){
+        if(map.has(s[i]) && map.get(s[i])===1){
+            return i;
+        }
+    }
+    return -1;
+};
+
+var s="loveleetcode";
+console.log(firstUniqChar(s))
