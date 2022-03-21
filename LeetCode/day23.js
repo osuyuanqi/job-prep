@@ -59,6 +59,7 @@ var reverseList = function(head) {
  * @return {TreeNode}
  */
 var sortedArrayToBST = function(nums) {
+    // also works: nums==null||nums.length==0
     if (nums==null ||!nums.length) return null;
     // let->changed before next function,const->changed each time     
     let mid = Math.floor(nums.length/2);
@@ -70,3 +71,46 @@ var sortedArrayToBST = function(nums) {
     
 };
 
+
+/*************************************************
+ * 23. Merge k Sorted Lists
+ ***********************************************/
+
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode[]} lists
+ * @return {ListNode}
+ */
+
+var mergeKLists = function(lists) {
+    const mergeTwo = (l1,l2)=>{
+        let node = new ListNode(0)
+        let curr=node;
+        while (l1&&l2){
+            if(l1.val<l2.val){
+                node.next=l1;
+                l1=l1.next;
+            }
+            else{
+                node.next=l2;
+                l2=l2.next;
+            }
+            node =node.next;
+        }
+        if (l1){node.next = l1;}
+        if (l2){node.next = l2;}
+        return curr.next;
+    }
+    // nk*lgn,root changes in the function
+    let root = lists[0];
+    for(let i =1;i<lists.length;i++){
+        root = mergeTwo(root,lists[i]);
+    }
+    return root||null;
+};
