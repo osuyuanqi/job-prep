@@ -55,6 +55,30 @@ namespace HelloWorld
             return i+1;
         }
 
+        /***********************************************
+        326. Power of Three
+        ***********************************************/
+        // iterative
+        static bool IsPowerOfThree(int n) {
+                // if (n ==1) return false;
+                if (n >0)
+                while (n%3==0)
+                    n=n/3;
+                return n==1;
+        }
+        
+        // recursive
+        static bool IsPowerOfThree1(int n) {
+            if (n ==0) return false;
+            if (n==1) return true;
+            if (n%3==0)
+            {
+               return IsPowerOfThree1(n/3); 
+            }
+            else{
+                return false;
+            }
+        }
         static void Main (string[] args){
             // 350. Intersection of Two Arrays II
             // int[] nums1 = {1,2,2,1},nums2 = {2,2};
@@ -69,6 +93,9 @@ namespace HelloWorld
             // 26. Remove Duplicates from Sorted Array
             // int[] nums = {1,1,2};
             // RemoveDuplicates(nums);
+            
+            // 326. Power of Three
+            // Console.WriteLine(IsPowerOfThree(45));
         }
     }
 }
