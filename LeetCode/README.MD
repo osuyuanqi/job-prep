@@ -47,4 +47,4 @@
 
 - day23: #155. Min Stack, #206. Reverse Linked List, #108. Convert Sorted Array to Binary Search Tree
 
-- day24: #350. Intersection of Two Arrays II, #53. Maximum Subarray, #26. Remove Duplicates from Sorted Array
+- day24: #350. Intersection of Two Arrays II, #53. Maximum Subarray, #26. Remove Duplicates from Sorted Array, #326. Power of Three, #191. Number of 1 Bits

@@ -79,6 +79,23 @@ namespace HelloWorld
                 return false;
             }
         }
+        
+        /***********************************************
+        191. Number of 1 Bits
+        ***********************************************/
+        static int HammingWeight(uint n) {
+            int res =0;
+            while(n!=0){
+                uint cur=n;
+                if ((cur&1)==1) 
+                    {res++;
+                Console.WriteLine(res);
+                    }
+                n=n>>1;
+            }
+            return res;
+        }
+
         static void Main (string[] args){
             // 350. Intersection of Two Arrays II
             // int[] nums1 = {1,2,2,1},nums2 = {2,2};
@@ -96,6 +113,10 @@ namespace HelloWorld
             
             // 326. Power of Three
             // Console.WriteLine(IsPowerOfThree(45));
+
+            // 191. Number of 1 Bits,has error
+            // uint n=00000000000000000000000000001011;
+            // Console.WriteLine(HammingWeight(n));
         }
     }
 }
