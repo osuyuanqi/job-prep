@@ -44,21 +44,12 @@ namespace HelloWorld
             }
             return -1;
         }
-        /***********************************************
-         53. Maximum Subarray
-         ***********************************************/
-        static int MaxSubArray(int[] nums) {
-                return 0;
-            }
 
         static void Main(string[] args)
         {
             // 28. Implement strStr()
             // string haystack = "hello",needle="ll";
             // Console.WriteLine(StrStr(haystack, needle));
-            // 53. Maximum Subarray
-            int[] nums = {-2,1,-3,4,-1,2,1,-5,4};
-            Console.WriteLine(MaxSubArray(nums));
         }
 
     }
