@@ -96,6 +96,22 @@ namespace HelloWorld
             return res;
         }
 
+        /***********************************************
+        22. Generate Parentheses
+        ***********************************************/
+        // static IList<string> GenerateParenthesis(int n) {
+        //         List<string> list = new List<string>();
+        //         static void GetParenthesis(List<string> list,string str,int open,int close,int max){
+        //             if (2*max==str.Length){
+        //                 list.Add(str);
+        //                 return;
+        //             }
+        //             if(open<max)GetParenthesis(list,str+"(", open+1,close,max);
+        //             if(open>close)GetParenthesis(list,str+")", open,close+1,max);
+        //         }
+        //         GetParenthesis(list,"", 0,0,n);
+        //         return list;
+        //     }
         static void Main (string[] args){
             // 350. Intersection of Two Arrays II
             // int[] nums1 = {1,2,2,1},nums2 = {2,2};
@@ -117,6 +133,9 @@ namespace HelloWorld
             // 191. Number of 1 Bits,has error
             // uint n=00000000000000000000000000001011;
             // Console.WriteLine(HammingWeight(n));
+
+            // 22. Generate Parentheses,literaly correct
+            // Console.WriteLine(GenerateParenthesis(4));
         }
     }
 }
