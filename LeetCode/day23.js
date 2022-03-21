@@ -216,24 +216,24 @@ var maxProfit = function(prices) {
  * @param {string} s
  * @return {number}
  */
+ // O(N)
 var firstUniqChar = function(s) {
-     var map=new Map();
-    for(i=0;i<s.length;i++){
-         if(map.has(s[i])){
-             map.set(s[i],2);
-         }
-         else{
-             map.set(s[i],1);
-         }
-     }
-
-    for(i=0;i<s.length;i++){
-        if(map.has(s[i]) && map.get(s[i])===1){
-            return i;
+    var map=new Map();
+    for(let i=0;i<s.length;i++){
+        if (!map.has(s[i])){
+            map.set(s[i],1)
         }
+        else
+            map.set(s[i],2)
     }
+    // console.log(map)
+    for (let i=0;i<s.length;i++)
+        {
+            // console.log(s[i])
+            if(map.get(s[i])==1)
+            return i;}
     return -1;
 };
 
-var s="loveleetcode";
-console.log(firstUniqChar(s))
+// var s="dddccdbba";
+// console.log(firstUniqChar(s))
