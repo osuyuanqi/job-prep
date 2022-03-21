@@ -65,9 +65,10 @@ namespace HelloWorld
             // 53. Maximum Subarray
             // int[] nums = {-2,1,-3,4,-1,2,1,-5,4};
             // Console.WriteLine(MaxSubArray(nums));
+            
             // 26. Remove Duplicates from Sorted Array
-            int[] nums = {1,1,2};
-            RemoveDuplicates(nums);
+            // int[] nums = {1,1,2};
+            // RemoveDuplicates(nums);
         }
     }
 }
