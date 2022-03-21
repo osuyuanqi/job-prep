@@ -27,19 +27,47 @@ namespace HelloWorld
         53. Maximum Subarray
         ***********************************************/
         static int MaxSubArray(int[] nums) {
-                return 0;
+            int max = int.MinValue,res = 0;
+            for(int i =0;i<nums.Length;i++){
+
+                res=Math.Max(nums[i],nums[i]+res);
+                if (res>max){
+                    max=res;
+                }
             }
+            return max;
+        }
+
+        /***********************************************
+        26. Remove Duplicates from Sorted Array
+        ***********************************************/
+        static int RemoveDuplicates(int[] nums) {
+            if(nums.Length==0)return 0;
+            int i =0;
+            for(int j = 0; j <nums.Length;j++){
+                if(nums[i]!=nums[j]){
+                    nums[i+1]=nums[j];
+                    i++;
+                }
+            }
+            // foreach(var k in nums)
+            // Console.WriteLine(k);
+            return i+1;
+        }
 
         static void Main (string[] args){
             // 350. Intersection of Two Arrays II
-            int[] nums1 = {1,2,2,1},nums2 = {2,2};
-            var inter = Intersect(nums1,nums2);
-            foreach(var item in inter)
-            Console.WriteLine(item.ToString());
+            // int[] nums1 = {1,2,2,1},nums2 = {2,2};
+            // var inter = Intersect(nums1,nums2);
+            // foreach(var item in inter)
+            // Console.WriteLine(item.ToString());
             
             // 53. Maximum Subarray
-            int[] nums = {-2,1,-3,4,-1,2,1,-5,4};
-            Console.WriteLine(MaxSubArray(nums));
+            // int[] nums = {-2,1,-3,4,-1,2,1,-5,4};
+            // Console.WriteLine(MaxSubArray(nums));
+            // 26. Remove Duplicates from Sorted Array
+            int[] nums = {1,1,2};
+            RemoveDuplicates(nums);
         }
     }
 }
