@@ -158,26 +158,19 @@ var mergeKLists = function(lists) {
  * @param {number[]} prices
  * @return {number}
  */
+// max profits-min profits
 var maxProfit = function(prices) {
-let i=0,sell=0,buy=0,m=0,profit=0;
-
-while(i<prices.length-1){
-    if(i<prices.length&&prices[i]>=prices[i+1])
-        i++;
-        buy=prices[i];
-    if(i<prices.length&&prices[i]<prices[i+1])    
-        i++;
-        sell=prices[i];
-
-    profit=sell-buy;
-// console.log(sell,buy);
-
-    if(profit>m)m=profit;
-}
-return m;
+    let minV=prices[0],maxV=0,profits=0;
+    for(let i =1;i<prices.length;i++){
+        if(prices[i]<minV)
+            minV=prices[i];
+        if(prices[i]-minV>profits)
+            profits=prices[i]-minV
+    }
+    return profits;
 }
 var prices=[7,1,5,3,6,4]
-// console.log(maxProfit(prices));
+console.log(maxProfit(prices));
 /*************************************************
  * 122. Best Time to Buy and Sell Stock II
  ***********************************************/
@@ -212,4 +205,4 @@ var maxProfit = function(prices) {
     return profits;
 }
 // var prices = [7,1,5,3,6,4]
-console.log(maxProfit(prices));
+// console.log(maxProfit(prices));
