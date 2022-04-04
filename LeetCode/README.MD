@@ -41,14 +41,14 @@
 
 - day20: **(Convert to JS)** #53. Maximum Subarray, #38. Count and Say,#242. Valid Anagram,#202. Happy Number
 
-- day21: #217. Contains Duplicate, #118. Pascal's Triangle, #70. Climbing Stairs
+- day21: **(JS)** #217. Contains Duplicate, #118. Pascal's Triangle, #70. Climbing Stairs
 
-- day22: #268. Missing Number, #350. Intersection of Two Arrays II, #349. Intersection of Two Arrays,  #237. Delete Node in a Linked List
+- day22: **(JS)** #268. Missing Number, #350. Intersection of Two Arrays II, #349. Intersection of Two Arrays,  #237. Delete Node in a Linked List
 
-- day23: #155. Min Stack, #206. Reverse Linked List, #108. Convert Sorted Array to Binary Search Tree
+- day23: **(JS)** #155. Min Stack, #206. Reverse Linked List, #108. Convert Sorted Array to Binary Search Tree
 
 - day24: #350. Intersection of Two Arrays II, #53. Maximum Subarray, #26. Remove Duplicates from Sorted Array, #326. Power of Three, #191. Number of 1 Bits, #22. Generate Parentheses
 
-- day25: #187. Repeated DNA Sequences, #count pair, 
+- day25: #187. Repeated DNA Sequences, #count pair 
 
-- day26: #101. Symmetric Tree
+- day26: #101. Symmetric Tree, #108. Convert Sorted Array to Binary Search Tree

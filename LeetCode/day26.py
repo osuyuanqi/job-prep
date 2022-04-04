@@ -2,13 +2,26 @@
 # 101. Symmetric Tree
 # ***********************************************
 
-def compare(self,root1,root2):
-	if root1==None or root2==None:
-	    return root1==root2
-	return root1.val == root2.val and self.compare(root1.left, root2.right) and self.compare(root1.right, root2.left)
 def isSymmetric(self, root: Optional[TreeNode]) -> bool:
-    return self.compare(root.left, root.right)
+    def tst(rootleft,rootright):
+        if rootleft == None or rootright==None:
+            return rootleft==rootright
+        return rootleft.val ==rootleft.val and tst(rootleft.left,rootright.right) and tst(rootleft.right,rootright.left)
+        
+    return tst(root.left,root.right)
+
+# ***********************************************
+# 108. Convert Sorted Array to Binary Search Tree
+# ***********************************************
+
+def sortedArrayToBST(self, nums: List[int]) -> Optional[TreeNode]:
+        if len(nums) ==0:
+            return None
+        mid = len(nums)//2
+        root = TreeNode(nums[mid])
+        root.left = self.sortedArrayToBST(nums[:mid])
+        root.right =  self.sortedArrayToBST(nums[mid+1:])
+        return root
 
 if __name__=="__main__":
     print('tst')
-    
