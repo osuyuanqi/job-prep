@@ -1,10 +1,14 @@
 # ***********************************************
-# 187. Repeated DNA Sequences
+# 101. Symmetric Tree
 # ***********************************************
 
-def plusOne(digits: list[int]) -> list[int]:
-	res = []
+def compare(self,root1,root2):
+	if root1==None or root2==None:
+	    return root1==root2
+	return root1.val == root2.val and self.compare(root1.left, root2.right) and self.compare(root1.right, root2.left)
+def isSymmetric(self, root: Optional[TreeNode]) -> bool:
+    return self.compare(root.left, root.right)
 
-	return res
-digits = [1,2,3]
-print(plusOne(digits))
+if __name__=="__main__":
+    print('tst')
+    
