@@ -45,10 +45,13 @@
 
 - day22: **(JS)** #268. Missing Number, #350. Intersection of Two Arrays II, #349. Intersection of Two Arrays,  #237. Delete Node in a Linked List
 
-- day23: **(JS)** #155. Min Stack, #206. Reverse Linked List, #108. Convert Sorted Array to Binary Search Tree
+- day23: **(JS)** #155. Min Stack, #206. Reverse Linked List, #108. Convert Sorted Array to Binary Search Tree, #21. Merge Two Sorted Lists, #23. Merge k Sorted Lists, #121. Best Time to Buy and Sell Stock, #122. Best Time to Buy and Sell Stock II, #387. First Unique Character in a String
 
 - day24: #350. Intersection of Two Arrays II, #53. Maximum Subarray, #26. Remove Duplicates from Sorted Array, #326. Power of Three, #191. Number of 1 Bits, #22. Generate Parentheses
 
 - day25: #187. Repeated DNA Sequences, #count pair 
 
 - day26: #101. Symmetric Tree, #108. Convert Sorted Array to Binary Search Tree, #66. Plus One, #198. House Robber
+
+- day27: #1. Two Sum, #121. Best Time to Buy and Sell Stock, #122. Best Time to Buy and Sell Stock II, 
+
