@@ -1,7 +1,7 @@
 
 # LeetCode log
 
-- day1: #344 Reverse String, #412 fizzBuzz, #136 Single Number, **#198(?) House Robber**
+- day1: #344 Reverse String, #412 fizzBuzz, #136 Single Number, #198 House Robber
 
 - day2: #104 Maximum Depth of Binary Tree, #283 Move Zeroes
 
@@ -51,4 +51,4 @@
 
 - day25: #187. Repeated DNA Sequences, #count pair 
 
-- day26: #101. Symmetric Tree, #108. Convert Sorted Array to Binary Search Tree, #66. Plus One, 
+- day26: #101. Symmetric Tree, #108. Convert Sorted Array to Binary Search Tree, #66. Plus One, #198. House Robber

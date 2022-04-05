@@ -70,7 +70,7 @@ def singleNumber2(nums: list[int]) -> int:
 
 # **********************************************
 # 198. House Robber:
-# can't robber adjacent,= could rober several 
+# can't robber adjacent
 # partition, e.g.{7,10,11},{7,4,8,1}
 # **********************************************
 

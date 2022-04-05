@@ -12,20 +12,20 @@ def isSymmetric(self, root: [TreeNode]) -> bool:
     return tst(root.left,root.right)
 
 # ***********************************************
-# 66. Plus One
+# 108. Convert Sorted Array to Binary Search Tree
 # ***********************************************
 
 def sortedArrayToBST(self, nums: list[int]) -> [TreeNode]:
-        if len(nums) ==0:
-            return None
-        mid = len(nums)//2
-        root = TreeNode(nums[mid])
-        root.left = self.sortedArrayToBST(nums[:mid])
-        root.right =  self.sortedArrayToBST(nums[mid+1:])
-        return root
+    if len(nums) ==0:
+        return None
+    mid = len(nums)//2
+    root = TreeNode(nums[mid])
+    root.left = self.sortedArrayToBST(nums[:mid])
+    root.right =  self.sortedArrayToBST(nums[mid+1:])
+    return root
 
 # ***********************************************
-# 108. Convert Sorted Array to Binary Search Tree
+# 66. Plus One
 # ***********************************************
 
 # way1: map
@@ -53,9 +53,24 @@ def plusOne2(digits: list[int]) -> list[int]:
             i -= 1
     return [1] + digits
 
+# ***********************************************
+# 198. House Robber
+# ***********************************************
+
+def rob(nums: list[int]) -> int:
+    last_max,cur_max=0,0
+    for i in range(len(nums)):
+        last_max,cur_max= cur_max,max(last_max+nums[i],cur_max)
+    return cur_max
+
+
 if __name__=="__main__":
     print('tst')
     
     # 66. Plus One
     # digits = [8,9]#[9,9]->[1,0,0],[4,3,2,1]->[4,3,2,2]
     # print(plusOne(digits))
+
+    # 198. House Robber
+    # nums = [2,7,9,3,1]
+    # print(rob(nums))
