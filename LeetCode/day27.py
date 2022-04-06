@@ -13,7 +13,6 @@ def twoSum( nums: list[int], target: int) -> list[int]:
 # 121. Best Time to Buy and Sell Stock
 # one transaction
 # ***********************************************
-
 def maxProfit(prices: list[int]) -> int:
     buy,profits=prices[0],0
     for i in range(1,len(prices)):
@@ -33,6 +32,27 @@ def maxProfit(prices: list[int]) -> int:
         if prices[i]<prices[i+1]:
             profits+=prices[i+1]-prices[i]
     return profits
+# ***********************************************
+# 118. Pascal's Triangle
+# ***********************************************
+def generate(numRows: int) -> list[list[int]]:
+    res = [[1]*i for i in range(1,numRows+1)]
+    print(res)
+    # e.g.5,i:0,1,2,3,4
+    for i in range(numRows):
+        # j:0,1,2,3
+        for j in range(1,i):
+            res[i][j] = res[i-1][j-1]+res[i-1][j]
+    return res
+
+# ***********************************************
+# 7. Reverse Integer
+# ***********************************************
+
+def reverse(x: int) -> int:
+    sign= -1 if x<0 else 1
+    res= sign * int(str(sign*x)[::-1])
+    return 0 if  res > 2 ** 31 - 1 or res < - 2 ** 31 else res
 
 if __name__=="__main__":
     print('tst')
@@ -47,5 +67,12 @@ if __name__=="__main__":
 
     # 122. Best Time to Buy and Sell Stock II
     # prices = [7,1,5,3,6,4]
-    prices=[1,2,3,4,5]
-    print(maxProfit(prices))
+    # prices=[1,2,3,4,5]
+    # print(maxProfit(prices))
+
+    # 118. Pascal's Triangle
+    # numRows = 5
+    # print(generate(numRows))
+    
+    # 7. Reverse Integer,[-2147483648,-321,321]
+    # print(reverse(321))

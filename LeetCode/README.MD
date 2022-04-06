@@ -53,5 +53,5 @@
 
 - day26: #101. Symmetric Tree, #108. Convert Sorted Array to Binary Search Tree, #66. Plus One, #198. House Robber
 
-- day27: #1. Two Sum, #121. Best Time to Buy and Sell Stock, #122. Best Time to Buy and Sell Stock II, 
+- day27: #1. Two Sum, #121. Best Time to Buy and Sell Stock, #122. Best Time to Buy and Sell Stock II, #118. Pascal's Triangle, #7. Reverse Integer
 
