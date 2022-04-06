@@ -48,11 +48,20 @@ def generate(numRows: int) -> list[list[int]]:
 # ***********************************************
 # 7. Reverse Integer
 # ***********************************************
-
+# way1: string<->int
 def reverse(x: int) -> int:
     sign= -1 if x<0 else 1
     res= sign * int(str(sign*x)[::-1])
     return 0 if  res > 2 ** 31 - 1 or res < - 2 ** 31 else res
+# way2:%
+def reverse(x: int) -> int:
+    sign = 1 if x>0 else -1
+    res= 0
+    x *= sign
+    while x!=0:
+        res = res*10+x % 10
+        x//=10
+    return sign*res if res>-2**31 and res<2**31 - 1 else 0
 
 if __name__=="__main__":
     print('tst')
