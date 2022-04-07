@@ -46,9 +46,27 @@ def trailingZeroes(n: int) -> int:
 # 20. Valid Parentheses
 # ***********************************************
 def isValid(s: str) -> bool:	
-while "()" in s or "[]" in s or "{}" in s:
-            s = s.replace("()","").replace("[]","").replace("{}","")
-        return s ==""
+	while "()" in s or "[]" in s or "{}" in s:
+		s = s.replace("()","").replace("[]","").replace("{}","")
+	return s ==""
+
+# way2: hash,last elem match
+def isValid(s: str) -> bool:
+	if len(s)%2!=0:
+		return False
+	dic = {"[":"]","{":"}","(":")"}
+	stack = []
+	for i in s:
+		if i in "[{(":
+			stack.append(i)
+		# stack just has [{(,match the last elm
+		# can't be empty since needs pop
+		elif not stack or i!=dic[stack.pop()]:
+			return False
+	# has elem
+	return not stack
+
+	
 if __name__=="__main__":
 	print('tst')
 	# 387. First Unique Character in a String
