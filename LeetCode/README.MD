@@ -55,4 +55,4 @@
 
 - day27: #1. Two Sum, #121. Best Time to Buy and Sell Stock, #122. Best Time to Buy and Sell Stock II, #118. Pascal's Triangle, #7. Reverse Integer
 
-- day28: #387. First Unique Character in a String, 
+- day28: #387. First Unique Character in a String, #172. Factorial Trailing Zeroes
