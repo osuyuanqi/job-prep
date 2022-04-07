@@ -41,8 +41,14 @@ def trailingZeroes(n: int) -> int:
 		print(n)
 		n=n//5
 		ct+=n
-	return ct
-
+	return 
+# ***********************************************
+# 20. Valid Parentheses
+# ***********************************************
+def isValid(s: str) -> bool:	
+while "()" in s or "[]" in s or "{}" in s:
+            s = s.replace("()","").replace("[]","").replace("{}","")
+        return s ==""
 if __name__=="__main__":
 	print('tst')
 	# 387. First Unique Character in a String
@@ -52,3 +58,8 @@ if __name__=="__main__":
 	# 172. Factorial Trailing Zeroes
 	# n = 10
 	# print(trailingZeroes(n))
+	
+	# 20. Valid Parentheses
+	s="([)]{}" #[()]
+	# print(s)
+	print(isValid(s))
