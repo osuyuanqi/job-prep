@@ -66,7 +66,24 @@ def isValid(s: str) -> bool:
 	# has elem
 	return not stack
 
-	
+# ***********************************************
+# 14. Longest Common Prefix
+# ***********************************************
+
+def longestCommonPrefix(strs: list[str]) -> str:
+	res= ""
+	for i in zip(*strs):
+		# any elem is the same
+		if len(set(i))==1:
+			# get the first one
+			res+=i[0]
+		else:
+			# e.g.["cir","car"]
+			return res
+		# print(i)
+	# cover strs=[""]
+	return res
+
 if __name__=="__main__":
 	print('tst')
 	# 387. First Unique Character in a String
@@ -81,3 +98,10 @@ if __name__=="__main__":
 	s="([)]{}" #[()]
 	# print(s)
 	print(isValid(s))
+
+	# 14. Longest Common Prefix
+	# strs = ["cir","car"]
+	strs= ["flower","flow","flight"]
+	strs = ["dog","racecar","car"]
+	strs=[""]
+	print(longestCommonPrefix(strs))
