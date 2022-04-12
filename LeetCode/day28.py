@@ -69,7 +69,7 @@ def isValid(s: str) -> bool:
 # ***********************************************
 # 14. Longest Common Prefix
 # ***********************************************
-
+# horizontal scanning
 def longestCommonPrefix(strs: list[str]) -> str:
 	res= ""
 	for i in zip(*strs):
@@ -83,6 +83,15 @@ def longestCommonPrefix(strs: list[str]) -> str:
 		# print(i)
 	# cover strs=[""]
 	return res
+# vertical scanning
+def longestCommonPrefix(strs: list[str]) -> str:
+	prefix=strs[0]
+	for ele in strs[1:]:
+		# until they're the same
+		while prefix!=ele[0:len(prefix)]:
+			# print(prefix,ele)
+			prefix=prefix[0:len(prefix)-1]
+	return prefix
 
 if __name__=="__main__":
 	print('tst')
