@@ -78,6 +78,24 @@ def strStr(haystack: str, needle: str) -> int:
 		if haystack[i:lneed+i]==needle:
 			return i
 	return -1
+	
+# ***********************************************
+# 125. Valid Palindrome
+# ***********************************************
+# pythonic check
+def isPalindrome(s: str) -> bool:
+	a=''.join([i for i in s if i.isalnum()]).lower()
+	return a==a[::-1]
+# two side check
+def isPalindrome(s: str) -> bool:
+	s = [i for i in s.lower() if i.isalnum()]
+	l,h = 0, len(s)-1
+	while l<h:
+		if s[l]!= s[h]:
+			return False
+		l+=1
+		h-=1
+	return True
 
 if __name__=="__main__":
 	print('tst')
@@ -90,3 +108,7 @@ if __name__=="__main__":
 	# 28. Implement strStr()
 	# haystack = "aa"; needle = "aa"
 	# print(strStr(haystack,needle))
+
+	# 125. Valid Palindrome
+	# s = "A man, a plan, a canal: Panama"
+	# print(isPalindrome(s))
