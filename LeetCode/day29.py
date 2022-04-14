@@ -51,6 +51,34 @@ def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> Optional[List
             p2=headA if p2==None else p2.next
         return p1
 
+# ***********************************************
+# 28. Implement strStr()
+# ***********************************************
+# check left
+def strStr(haystack: str, needle: str) -> int:
+	if needle==None or haystack==None:
+		return 0
+
+	for i in range(len(haystack)):
+		for j in range(i,len(haystack)):
+			# print(i,j,needle,haystack[i:j])
+			if haystack[i:j+1]==needle:
+				return i
+	return -1
+
+# track the rest length deduct needle
+def strStr(haystack: str, needle: str) -> int:
+	if needle==None or haystack==None:
+		return 0
+	lneed=len(needle)
+	l=len(haystack)-lneed+1
+
+	for i in range(l):
+		# print(i,needle,haystack[i:lneed+i])
+		if haystack[i:lneed+i]==needle:
+			return i
+	return -1
+
 if __name__=="__main__":
 	print('tst')
 	
@@ -58,3 +86,7 @@ if __name__=="__main__":
 	# print(mySqrt(76))
 	
 	# 160. Intersection of Two Linked Lists
+
+	# 28. Implement strStr()
+	# haystack = "aa"; needle = "aa"
+	# print(strStr(haystack,needle))
