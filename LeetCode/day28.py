@@ -83,6 +83,7 @@ def longestCommonPrefix(strs: list[str]) -> str:
 		# print(i)
 	# cover strs=[""]
 	return res
+
 # vertical scanning
 def longestCommonPrefix(strs: list[str]) -> str:
 	prefix=strs[0]
