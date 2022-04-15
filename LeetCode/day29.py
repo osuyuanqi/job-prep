@@ -96,6 +96,13 @@ def isPalindrome(s: str) -> bool:
 		l+=1
 		h-=1
 	return True
+# ***********************************************
+# 7. Reverse Integer
+# ***********************************************
+def reverse(x: int) -> int:
+	sign=1 if x>0 else -1
+	a=int(str(sign*x)[::-1])
+	return  sign*a if sign*a > -2**31 and sign*a < 2**31-1 else 0
 
 if __name__=="__main__":
 	print('tst')
@@ -112,3 +119,7 @@ if __name__=="__main__":
 	# 125. Valid Palindrome
 	# s = "A man, a plan, a canal: Panama"
 	# print(isPalindrome(s))
+
+	# 7. Reverse Integer
+	# x = 123
+	# print(reverse(x))

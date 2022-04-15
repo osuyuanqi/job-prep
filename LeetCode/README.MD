@@ -57,4 +57,5 @@
 
 - day28: #387. First Unique Character in a String, #172. Factorial Trailing Zeroes，#20. Valid Parentheses, #14. Longest Common Prefix
 
-- day29: #69. Sqrt(x), #160. Intersection of Two Linked Lists, #28. Implement strStr(), #125. Valid Palindrome
+- day29: #69. Sqrt(x), #160. Intersection of Two Linked Lists, #28. Implement strStr(), #125. Valid Palindrome, #7. Reverse Integer
+
