@@ -7,9 +7,8 @@ def rotate(nums: list[int], k: int) -> None:
 	"""
 	Do not return anything, modify nums in-place instead.
 	"""
-	n=len(nums)
-	k %=n
-	nums[:] = nums[n-k:]+nums[:n-k]
+	k %=len(nums)
+	nums[:] = nums[-k:]+nums[:-k]
 
 # pop original array->change,append into the tail	
 def rotate(nums: list[int], k: int) -> None:
