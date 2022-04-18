@@ -103,7 +103,17 @@ def reverse(x: int) -> int:
 	sign=1 if x>0 else -1
 	a=int(str(sign*x)[::-1])
 	return  sign*a if sign*a > -2**31 and sign*a < 2**31-1 else 0
+def reverse(x: int) -> int:
+	sign=1 if x>0 else -1
+	res =0
+	a=sign*x
+	while a>0:
+		rem = a%10
+		res = 10*res+rem
+		a//=10
+	return sign*res if sign*res > -2**31 and sign*res < 2**31-1 else 0
 
+	
 if __name__=="__main__":
 	print('tst')
 	
