@@ -74,6 +74,39 @@ def reverseBits(n: int) -> int:
 		# print('{:032b}'.format(a),i,bit,'{:032b}'.format(bit<<(31-i)),'{:032b}'.format(res))
 	return res
 
+# ***********************************************
+# 155. Min Stack
+# ***********************************************
+class MinStack:
+
+    def __init__(self):
+        self.stack=[]
+        self.min_elem=[]
+
+    # min_elem: always push the min
+    def push(self, val: int) -> None:
+        self.stack.append(val)
+        min_elem=self.min_elem
+        # append val when not min_elem==True, means it's None
+        min_elem.append(val if not min_elem else min(val,min_elem[-1]))
+        
+    def pop(self) -> None:
+        self.stack.pop()
+        self.min_elem.pop()
+
+    def top(self) -> int:
+        return self.stack[-1]
+
+    def getMin(self) -> int:
+        return self.min_elem[-1]
+        
+# Your MinStack object will be instantiated and called as such:
+# obj = MinStack()
+# obj.push(val)
+# obj.pop()
+# param_3 = obj.top()
+# param_4 = obj.getMin()
+
 if __name__=="__main__":
 	print('tst')
 	

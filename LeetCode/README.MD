@@ -45,7 +45,7 @@
 
 - day22: **(JS)** #268. Missing Number, #350. Intersection of Two Arrays II, #349. Intersection of Two Arrays,  #237. Delete Node in a Linked List
 
-- day23: **(JS)** #155. Min Stack, #206. Reverse Linked List, #108. Convert Sorted Array to Binary Search Tree, #21. Merge Two Sorted Lists, #23. Merge k Sorted Lists, #121. Best Time to Buy and Sell Stock, #122. Best Time to Buy and Sell Stock II, #387. First Unique Character in a String
+- day23: **(JS)** #206. Reverse Linked List, #108. Convert Sorted Array to Binary Search Tree, #21. Merge Two Sorted Lists, #23. Merge k Sorted Lists, #121. Best Time to Buy and Sell Stock, #122. Best Time to Buy and Sell Stock II, #387. First Unique Character in a String
 
 - day24: #350. Intersection of Two Arrays II, #53. Maximum Subarray, #26. Remove Duplicates from Sorted Array, #326. Power of Three, #191. Number of 1 Bits, #22. Generate Parentheses
 
@@ -59,6 +59,6 @@
 
 - day29: #69. Sqrt(x), #160. Intersection of Two Linked Lists, #28. Implement strStr(), #125. Valid Palindrome, #7. Reverse Integer
 
-- day30: #189. Rotate Array, #204. Count Primes, #190. Reverse Bits
+- day30: #189. Rotate Array, #204. Count Primes, #190. Reverse Bits, #155. Min Stack
 
 
