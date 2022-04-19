@@ -59,3 +59,6 @@
 
 - day29: #69. Sqrt(x), #160. Intersection of Two Linked Lists, #28. Implement strStr(), #125. Valid Palindrome, #7. Reverse Integer
 
+- day30: #189. Rotate Array, #204. Count Primes,
+
+
