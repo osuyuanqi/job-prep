@@ -88,6 +88,7 @@ class MinStack:
         self.stack.append(val)
         min_elem=self.min_elem
         # append val when not min_elem==True, means it's None
+        # e.g.a=None; print(1 if not a else 2)->1
         min_elem.append(val if not min_elem else min(val,min_elem[-1]))
         
     def pop(self) -> None:
