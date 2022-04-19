@@ -108,6 +108,36 @@ class MinStack:
 # param_3 = obj.top()
 # param_4 = obj.getMin()
 
+# **********************************************
+# 94. Binary Tree Inorder Traversal
+# **********************************************
+# recursive
+def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+    res =[]
+    def in_trav(root,res):
+        if root:
+            in_trav(root.left,res)
+            res.append(root.val)
+            in_trav(root.right,res)
+        
+    in_trav(root,res)
+    return res
+
+# iterative
+def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+    res,stack = [],[]
+    while root:
+        # append all the leftnode most
+        # keep track the stack to keep all elem included
+        while root or stack:
+            stack.append(root)
+            root = root.left
+        # pop the leftmost val
+        l_node = stack.pop()
+        res.append(l_node.val)
+        
+        root = l_node.right
+    return res
 if __name__=="__main__":
 	print('tst')
 	
