@@ -66,10 +66,12 @@ def reverseBits(n: int) -> int:
 	for i in range(32):
 	    # pop to the right_most
 		a=n>>i
+		# only last 1 left, since &1 is &000..001
 		bit=(a)&1
 		# push the pop val to the left_most, then add together
+		# 31->0
 		res= res|(bit<<(31-i))
-		print('{:032b}'.format(a),i,bit,'{:032b}'.format(bit<<(31-i)),'{:032b}'.format(res))
+		# print('{:032b}'.format(a),i,bit,'{:032b}'.format(bit<<(31-i)),'{:032b}'.format(res))
 	return res
 
 if __name__=="__main__":
