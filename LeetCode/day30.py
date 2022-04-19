@@ -52,6 +52,25 @@ def countPrimes(n: int) -> int:
 	# print(s)
 
 	return sum(s)
+# ***********************************************
+# 190. Reverse Bits
+# ***********************************************
+
+def reverseBits(n: int) -> int:
+	a='{:032b}'.format(n)
+	# int(x,2)->x must be string
+	return int(a[::-1],2)
+
+def reverseBits(n: int) -> int:
+	res=0
+	for i in range(32):
+	    # pop to the right_most
+		a=n>>i
+		bit=(a)&1
+		# push the pop val to the left_most, then add together
+		res= res|(bit<<(31-i))
+		print('{:032b}'.format(a),i,bit,'{:032b}'.format(bit<<(31-i)),'{:032b}'.format(res))
+	return res
 
 if __name__=="__main__":
 	print('tst')
@@ -64,3 +83,7 @@ if __name__=="__main__":
 	# 204. Count Primes
 	# n = 10
 	# print(countPrimes(n))
+
+	# 190. Reverse Bits
+	# n='00000010100101000001111010011100'
+	# print(reverseBits(int(n,2)))
