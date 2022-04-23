@@ -26,8 +26,39 @@ def fizzBuzz(n:int)->list[str]:
 		else:
 			res.append(i)
 	return res
+# **********************************************
+# 136. Single Number
+# **********************************************
+# way1: O(n^2)->array also need iterative search
+def singleNumber(nums: list[int]) -> int:
+	a=[]
+	for i in range(len(nums)):
+		if nums[i] not in a:
+			a.append(nums[i])
+		else:
+			a.remove(nums[i])
+	return a[0]
 
+# way2: hash-> much faster
+def singleNumber(nums: list[int]) -> int:
+	dic ={}
+	for i in nums:
+		if i in dic:
+			dic[i]-=1
+		else:
+			dic[i]=1
+	for k,v in dic.items():
+		if v==1:
+			return k
+# way3: ^ tip->similar faster as hash
+def singleNumber(nums: list[int]) -> int:
+	res=0
+	# since every elem appears exactly twice except for one
+	for i in nums:
+		res^=i
+	return res
 if __name__=="__main__":
+	print("tst")
 	# 344. Reverse String
 	# s = ["h","e","l","l","o"]
 	# print(reverseString(s))
@@ -37,3 +68,6 @@ if __name__=="__main__":
 	# n=15
 	# print(fizzBuzz(n))
 	
+	# 136. Single Number
+	# nums = [4,1,2,1,2]
+	# print(singleNumber(nums))
