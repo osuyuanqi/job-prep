@@ -57,6 +57,30 @@ def singleNumber(nums: list[int]) -> int:
 	for i in nums:
 		res^=i
 	return res
+# **********************************************
+# 217. Contains Duplicate
+# **********************************************
+# way1: pythonic compares
+def containsDuplicate(nums: list[int]) -> bool:
+	return len(set(nums))!=len(nums)
+# way2: dic
+def containsDuplicate(nums: list[int]) -> bool:
+	dic = {}
+	for i in nums:
+		if i in dic:
+			return True
+		else:
+			dic[i]=None
+	return False
+# way3: hash
+def containsDuplicate(nums: list[int]) -> bool:
+	s=set()
+	for i in nums:
+		if i in s:
+			return True
+		s.add(i)
+	return False
+
 if __name__=="__main__":
 	print("tst")
 	# 344. Reverse String
@@ -71,3 +95,7 @@ if __name__=="__main__":
 	# 136. Single Number
 	# nums = [4,1,2,1,2]
 	# print(singleNumber(nums))
+
+	# 217. Contains Duplicate
+	# nums = [1,1,1,3,3,4,3,2,4,2]
+	# print(containsDuplicate(nums))
