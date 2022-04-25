@@ -25,6 +25,22 @@ def maxDepth(root: [TreeNode]) -> int:
 		# explore the new_stack to the end, depth first
 		print(new_stack)
 	return depth
+# **********************************************
+# 371. Sum of Two Integers
+# **********************************************
+def getSum(a: int, b: int) -> int:
+	mask=0xFFFFFFFF
+	
+	# 000 also seen as 0, since compare decimal 
+	while b!=0:
+		# ^->XOR
+		sum1=(a^b)&mask
+		# since only 1&1=1
+		carry=((a&b)<<1)&mask
+		a=sum1
+		b=carry
+	return a if a< 0x7FFFFFFF else ~(a^mask)
+
 if __name__=="__main__":
 	print('tst')
 	
@@ -32,3 +48,6 @@ if __name__=="__main__":
 	# root = [3,9,20,None,None,15,7],# 3
 	# maxDepth(root)
 	
+	# 371. Sum of Two Integers
+	# a,b=2,3	
+	# print(getSum(a,b))
