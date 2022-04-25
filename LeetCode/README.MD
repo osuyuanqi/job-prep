@@ -60,5 +60,6 @@
 
 - day30: #189. Rotate Array, #204. Count Primes, #190. Reverse Bits, #155. Min Stack, **#94. Binary Tree Inorder Traversal[iterative need improve]**
 
-- day31: #344 Reverse String, #412 Fizz Buzz, #136 Single Number, #217. Contains Duplicate, #168. Excel Sheet Column Title
+- day31: #344 Reverse String, #412 Fizz Buzz, #136 Single Number, #217. Contains Duplicate, #168. Excel Sheet Column Title, #171. Excel Sheet Column Number
 
+- day32: #104. Maximum Depth of Binary Tree, #283. Move Zeroes, #371. Sum of Two Integers, #206. Reverse Linked List

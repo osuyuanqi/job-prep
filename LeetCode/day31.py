@@ -84,19 +84,7 @@ def containsDuplicate(nums: list[int]) -> bool:
 # **********************************************
 # 168. Excel Sheet Column Title
 # **********************************************
-# way1: not understand n-1
-def convertToTitle(columnNumber: int) -> str:
-	dic = {}
-	for i in range(26):
-		dic[i]=chr(97+i).upper()
-	res=""
-	while columnNumber>0:
-		print((columnNumber-1)%26)
-		res+=dic[(columnNumber-1)%26]
-		columnNumber=(columnNumber-1)//26
-	return res[::-1]
-	
-# way2: reverse 
+# way1: reverse from end, better to understand
 def convertToTitle(n: int) -> str:
 	table = '0ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 	res = ""
@@ -108,6 +96,31 @@ def convertToTitle(n: int) -> str:
 		n=(n-digit)//26
 		res+=table[digit]
 	return res[::-1]
+
+# way2: not understand n-1
+def convertToTitle(columnNumber: int) -> str:
+	dic = {}
+	for i in range(26):
+		dic[i]=chr(97+i).upper()
+	res=""
+	while columnNumber>0:
+		print((columnNumber-1)%26)
+		res+=dic[(columnNumber-1)%26]
+		columnNumber=(columnNumber-1)//26
+	return res[::-1]
+	
+# **********************************************
+# 171. Excel Sheet Column Number
+# **********************************************
+def titleToNumber(columnTitle: str) -> int:
+	dic={}
+	for i in range(1,27):
+		dic[chr(64+i)]=i
+	res=0
+	a=columnTitle[::-1]
+	for i in range(len(a)):
+		res+=dic[a[i]]*26**i
+	return res
 
 if __name__=="__main__":
 	print("tst")
@@ -133,3 +146,7 @@ if __name__=="__main__":
 	# columnNumber = 701 #ZY
 	# print(convertToTitle(columnNumber))
 	# print(701%26)
+	
+	# 171. Excel Sheet Column Number
+	# columnTitle = "ZY"
+	# print(titleToNumber(columnTitle))
