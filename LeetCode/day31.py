@@ -81,6 +81,34 @@ def containsDuplicate(nums: list[int]) -> bool:
 		s.add(i)
 	return False
 
+# **********************************************
+# 168. Excel Sheet Column Title
+# **********************************************
+# way1: not understand n-1
+def convertToTitle(columnNumber: int) -> str:
+	dic = {}
+	for i in range(26):
+		dic[i]=chr(97+i).upper()
+	res=""
+	while columnNumber>0:
+		print((columnNumber-1)%26)
+		res+=dic[(columnNumber-1)%26]
+		columnNumber=(columnNumber-1)//26
+	return res[::-1]
+	
+# way2: reverse 
+def convertToTitle(n: int) -> str:
+	table = '0ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+	res = ""
+	while n > 0:
+		digit=n%26
+		if digit==0:
+			digit=26
+		# from last to first
+		n=(n-digit)//26
+		res+=table[digit]
+	return res[::-1]
+
 if __name__=="__main__":
 	print("tst")
 	# 344. Reverse String
@@ -99,3 +127,9 @@ if __name__=="__main__":
 	# 217. Contains Duplicate
 	# nums = [1,1,1,3,3,4,3,2,4,2]
 	# print(containsDuplicate(nums))
+
+	#168. Excel Sheet Column Title
+
+	# columnNumber = 701 #ZY
+	# print(convertToTitle(columnNumber))
+	# print(701%26)

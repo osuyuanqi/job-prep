@@ -1,4 +1,3 @@
-
 # LeetCode log
 
 - day1: #344 Reverse String, #412 fizzBuzz, #136 Single Number, #198 House Robber
@@ -61,5 +60,5 @@
 
 - day30: #189. Rotate Array, #204. Count Primes, #190. Reverse Bits, #155. Min Stack, **#94. Binary Tree Inorder Traversal[iterative need improve]**
 
-- day31: #344 Reverse String, #412 Fizz Buzz, #136 Single Number, #217. Contains Duplicate
+- day31: #344 Reverse String, #412 Fizz Buzz, #136 Single Number, #217. Contains Duplicate, #168. Excel Sheet Column Title
 
