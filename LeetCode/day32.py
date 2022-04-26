@@ -61,6 +61,52 @@ def reverseList(head: [ListNode]) -> [ListNode]:
 	head.next.next=head
 	head.next=None
 	return rev
+# **********************************************
+# 169. Majority Element
+# import condition: assume the majority elem appears
+# more than n//2 times
+# **********************************************
+# way1: hash
+def majorityElement(nums: list[int]) -> int:
+	dic,count={},0
+	for i in nums:
+		if i not in dic:
+			dic[i]=1
+		else:
+			dic[i]+=1
+	# print(dic,maxV,i)
+	maxV,maxI=0,0
+	for i,j in dic.items():
+		# print(i,j,maxV)
+		if j>maxV:
+			maxV=j
+			maxI=i
+	return maxI
+# improve
+def majorityElement(nums: list[int]) -> int:
+	dic,maxK,maxV={},nums[0],0
+	for i in range(len(nums)):
+		if nums[i] not in dic:
+			dic[nums[i]]=1
+		else:
+			dic[nums[i]]+=1
+			if dic[nums[i]]>maxV:
+				maxK=nums[i]
+				maxV=dic[nums[i]]
+	return maxK
+# Boyer–Moore Majority Vote Algorithm
+def majorityElement(nums: list[int]) -> int:
+	ma,count=nums[0],1
+	for i in range(len(nums)):
+		if nums[i]==ma:
+			count+=1
+		else:
+			count-=1
+			print(i,nums[i],count)
+			if count==0:
+				ma=nums[i]
+				count=1
+	return ma
 
 if __name__=="__main__":
 	print('tst')
@@ -72,3 +118,7 @@ if __name__=="__main__":
 	# 371. Sum of Two Integers
 	# a,b=2,3	
 	# print(getSum(a,b))
+
+	# 169. Majority Element
+	# nums = [3,2,1,2,4,2]
+	# print(majorityElement(nums))
