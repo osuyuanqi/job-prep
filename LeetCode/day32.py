@@ -107,7 +107,17 @@ def majorityElement(nums: list[int]) -> int:
 				ma=nums[i]
 				count=1
 	return ma
-
+# **********************************************
+# 237. Delete Node in a Linked List
+# **********************************************
+def deleteNode(node):
+	"""
+	:type node: ListNode
+	:rtype: void Do not return anything, modify node in-place instead.
+	"""
+	node.val=node.next.val
+	node.next= node.next.next
+	
 if __name__=="__main__":
 	print('tst')
 	
