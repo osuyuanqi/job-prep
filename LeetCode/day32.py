@@ -41,6 +41,27 @@ def getSum(a: int, b: int) -> int:
 		b=carry
 	return a if a< 0x7FFFFFFF else ~(a^mask)
 
+# **********************************************
+# 206. Reverse Linked List
+# **********************************************
+# iterative
+def reverseList(head: [ListNode]) -> [ListNode]:
+	prev,curr=None,head
+	while curr:
+		temp=curr.next
+		curr.next=prev
+		prev=curr
+		curr=temp
+	return prev
+# recursive
+def reverseList(head: [ListNode]) -> [ListNode]:
+	if head==None or head.next==None: return head
+	rev=self.reverseList(head.next)
+	# head is a pointer->point to the first elem
+	head.next.next=head
+	head.next=None
+	return rev
+
 if __name__=="__main__":
 	print('tst')
 	

@@ -90,31 +90,31 @@ getIntersectionNode(llst.head,llst1.head)
 # **********************************************
 
 # method1: iteration edition
-def reverseList( head: [Node]) -> [Node]:
-        prev = None
-        current = head
-        while current:
-            next = current.next
-            current.next = prev
-            prev = current
-            # current node is still exist
-            current = next
-        return prev
+def reverseList(head: [Node]) -> [Node]:
+    prev = None
+    current = head
+    while current:
+        next = current.next
+        current.next = prev
+        prev = current
+        # current node is still exist
+        current = next
+    return prev
 
 # method2: recursion edition
 def reverseList1(head: [Node]) -> [Node]:
-        if not head or not head.next:
-            return head
-        # print('bbbb',head,'aaaa')
-        
-        recursive = self.reverseList(head.next)
-        # head.next: next part of head, let's say a
-        # head.next.next: the next elem after a, since they've linked together by default
-        head.next.next = head
-        
-        # since head has two directions
-        head.next = None
-        return recursive
+    if not head or not head.next:
+        return head
+    # print('bbbb',head,'aaaa')
+    
+    recursive = self.reverseList(head.next)
+    # head.next: next part of head, let's say a
+    # head.next.next: the next elem after a, since they've linked together by default
+    head.next.next = head
+    
+    # since head has two directions
+    head.next = None
+    return recursive
 # **********************************************
 # 19. Remove Nth Node From End of List
 # two pointers, arithmatic calculation
