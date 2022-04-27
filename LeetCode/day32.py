@@ -145,6 +145,26 @@ def romanToInt(s: str) -> int:
 		else:
 			res+=dic[s[i]]
 	return res+dic[s[len(s)-1]]
+# **********************************************
+# 122. Best Time to Buy and Sell Stock II
+# **********************************************
+
+# only concern current and next
+def maxProfit(prices: list[int]) -> int:
+	profit=0
+	for i in range(len(prices)-1):
+		if prices[i+1]-prices[i]>0:
+			profit+=prices[i+1]-prices[i]
+	return profit
+# pass every elem
+def maxProfit(prices: list[int]) -> int:
+	buy,profit=prices[0],0
+	for price in prices:
+		if price>buy:
+			profit+=price-buy
+		# though jumped, also passed the latest price
+		buy=price
+	return profit
 
 if __name__=="__main__":
 	print('tst')
@@ -164,3 +184,7 @@ if __name__=="__main__":
 	# 13. Roman to Integer
 	# s = "III"
 	# print(romanToInt(s))	
+
+	# 122. Best Time to Buy and Sell Stock II
+	# prices = [7,1,5,3,6,4]
+	# print(maxProfit(prices))
