@@ -25,6 +25,34 @@ def maxDepth(root: [TreeNode]) -> int:
 		# explore the new_stack to the end, depth first
 		print(new_stack)
 	return depth
+
+# **********************************************
+# 283. Move Zeroes
+# **********************************************
+# slower
+def moveZeroes(nums: list[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        for i in nums:
+            if i==0:
+                nums.remove(0)
+                nums.append(0)
+# swap #0
+def moveZeroes(nums: list[int]) -> None:
+	"""
+	Do not return anything, modify nums in-place instead.
+	"""
+	index = 0
+	for i in range(len(nums)):
+		# print(nums[i],nums[index],index,nums)
+
+		if nums[i] != 0:
+			# exchange the first index of 0
+			nums[index], nums[i] = nums[i], nums[index]
+			# move to the next index
+			index += 1
+
 # **********************************************
 # 371. Sum of Two Integers
 # **********************************************
@@ -61,6 +89,7 @@ def reverseList(head: [ListNode]) -> [ListNode]:
 	head.next.next=head
 	head.next=None
 	return rev
+
 # **********************************************
 # 169. Majority Element
 # import condition: assume the majority elem appears
@@ -165,6 +194,25 @@ def maxProfit(prices: list[int]) -> int:
 		# though jumped, also passed the latest price
 		buy=price
 	return profit
+# **********************************************
+# 242. Valid Anagram
+# **********************************************
+def isAnagram(s: str, t: str) -> bool:
+	dic ={}
+	for i in range(len(s)):
+		if s[i] not in dic:
+			dic[s[i]]=1
+		else:
+			dic[s[i]]+=1
+	# print(dic)
+	for i in range(len(t)):
+		if t[i] not in dic:
+			return False
+		dic[t[i]]-=1
+	for k,v in dic.items():
+		if v!=0:
+			return False
+	return True
 
 if __name__=="__main__":
 	print('tst')
@@ -172,7 +220,12 @@ if __name__=="__main__":
 	# 104. Maximum Depth of Binary Tree
 	# root = [3,9,20,None,None,15,7],# 3
 	# maxDepth(root)
-	
+
+	# 283. Move Zeroes
+	# nums=[1,0,0,3,12]
+	# print(moveZeroes(nums))
+	# print(nums)
+
 	# 371. Sum of Two Integers
 	# a,b=2,3	
 	# print(getSum(a,b))
@@ -188,3 +241,7 @@ if __name__=="__main__":
 	# 122. Best Time to Buy and Sell Stock II
 	# prices = [7,1,5,3,6,4]
 	# print(maxProfit(prices))
+
+	# 242. Valid Anagram
+	# s = "rat"; t = "car"
+	# print(isAnagram(s,t))
