@@ -63,3 +63,5 @@
 - day31: #344 Reverse String, #412 Fizz Buzz, #136 Single Number, #217. Contains Duplicate, #168. Excel Sheet Column Title, #171. Excel Sheet Column Number
 
 - day32: #104. Maximum Depth of Binary Tree, #283. Move Zeroes, #371. Sum of Two Integers, #206. Reverse Linked List, #237. Delete Node in a Linked List, #169. Majority Element, #13. Roman to Integer, #122. Best Time to Buy and Sell Stock II, #242. Valid Anagram
+
+- day33: #217. Contains Duplicate,
