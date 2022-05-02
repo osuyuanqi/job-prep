@@ -1,4 +1,4 @@
-from pub_module import TreeNode
+from pub_module import *
 # **********************************************
 # 217. Contains Duplicate
 # **********************************************
@@ -84,7 +84,7 @@ def sortedArrayToBST(nums: list[int]) -> [TreeNode]:
 # **********************************************
 # 21. Merge Two Sorted Lists
 # **********************************************
-def mergeTwoLists(list1: [ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+def mergeTwoLists(list1: [ListNode], list2: [ListNode]) -> [ListNode]:
 		# same object, one pointer move, another pointer stay
         dummy=p=ListNode(-1)
         while list1 and list2:
@@ -100,6 +100,26 @@ def mergeTwoLists(list1: [ListNode], list2: Optional[ListNode]) -> Optional[List
         if list2:
             dummy.next=list2
         return p.next
+
+# **********************************************
+# 350. Intersection of Two Arrays II
+# **********************************************
+def intersect(nums1: list[int], nums2: list[int]) -> list[int]:
+	dic,res={},[]
+	for i in range(len(nums1)):
+		if nums1[i] not in dic:
+			dic[nums1[i]]=1
+		else:
+			dic[nums1[i]]+=1
+	# print(dic)
+	for i in range(len(nums2)):
+		if nums2[i] in dic and dic[nums2[i]]!=0:
+			res.append(nums2[i])
+			dic[nums2[i]]-=1
+	# print(dic)
+	return res
+
+
 if __name__=="__main__":
 	print('tst')
 	# 217. Contains Duplicate
@@ -113,3 +133,7 @@ if __name__=="__main__":
 	# 387. First Unique Character in a String
 	# s = "aabbc"
 	# print(firstUniqChar(s))
+
+	# 350. Intersection of Two Arrays II
+	# nums1 = [4,9,5]; nums2 = [9,4,9,8,4]
+	# print(intersect(nums1,nums2))
