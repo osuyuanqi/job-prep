@@ -64,4 +64,4 @@
 
 - day32: #104. Maximum Depth of Binary Tree, #283. Move Zeroes, #371. Sum of Two Integers, #206. Reverse Linked List, #237. Delete Node in a Linked List, #169. Majority Element, #13. Roman to Integer, #122. Best Time to Buy and Sell Stock II, #242. Valid Anagram
 
-- day33: #217. Contains Duplicate, #387. First Unique Character in a String, #108. Convert Sorted Array to Binary Search Tree, #268. Missing Number, #350. Intersection of Two Arrays II, #121. Best Time to Buy and Sell Stock, #21. Merge Two Sorted Lists(two pointer)[https://stackoverflow.com/questions/58759348/when-does-a-pointer-to-a-linked-list-change-the-actual-list]   
+- day33: #217. Contains Duplicate, #387. First Unique Character in a String, #108. Convert Sorted Array to Binary Search Tree, #268. Missing Number, #350. Intersection of Two Arrays II, #121. Best Time to Buy and Sell Stock, #21. Merge Two Sorted Lists [two pointer](https://stackoverflow.com/questions/58759348/when-does-a-pointer-to-a-linked-list-change-the-actual-list)
