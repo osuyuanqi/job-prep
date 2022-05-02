@@ -119,6 +119,20 @@ def intersect(nums1: list[int], nums2: list[int]) -> list[int]:
 	# print(dic)
 	return res
 
+# **********************************************
+# 121. Best Time to Buy and Sell Stock
+# note: wait for maxprof, sell once
+# **********************************************
+# get the min till now
+# update res only when profits bigger
+def maxProfit(prices: list[int]) -> int:
+	res,buy=0,prices[0]
+	for i in range(len(prices)):
+		if prices[i]<buy:
+			buy=prices[i]
+		if prices[i]-buy>res:
+			res=prices[i]-buy
+	return res
 
 if __name__=="__main__":
 	print('tst')
@@ -137,3 +151,7 @@ if __name__=="__main__":
 	# 350. Intersection of Two Arrays II
 	# nums1 = [4,9,5]; nums2 = [9,4,9,8,4]
 	# print(intersect(nums1,nums2))
+
+	# 121. Best Time to Buy and Sell Stock
+	# prices = [7,1,5,3,6,4]
+	# print(maxProfit(prices))
