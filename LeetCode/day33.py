@@ -81,7 +81,25 @@ def sortedArrayToBST(nums: list[int]) -> [TreeNode]:
     root.right=self.sortedArrayToBST(nums[mid+1:])
         
     return root
-
+# **********************************************
+# 21. Merge Two Sorted Lists
+# **********************************************
+def mergeTwoLists(list1: [ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+        # one move, another stay
+        dummy=p=ListNode(-1)
+        while list1 and list2:
+            if list1.val>list2.val:
+                dummy.next=list2
+                list2=list2.next
+            else:
+                dummy.next=list1
+                list1=list1.next
+            dummy=dummy.next
+        if list1:
+            dummy.next=list1
+        if list2:
+            dummy.next=list2
+        return p.next
 if __name__=="__main__":
 	print('tst')
 	# 217. Contains Duplicate
