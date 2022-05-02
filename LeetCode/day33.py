@@ -85,7 +85,7 @@ def sortedArrayToBST(nums: list[int]) -> [TreeNode]:
 # 21. Merge Two Sorted Lists
 # **********************************************
 def mergeTwoLists(list1: [ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
-        # one move, another stay
+		# same object, one pointer move, another pointer stay
         dummy=p=ListNode(-1)
         while list1 and list2:
             if list1.val>list2.val:
