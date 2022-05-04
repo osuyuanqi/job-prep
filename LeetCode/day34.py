@@ -49,6 +49,31 @@ def climbStairs(n: int) -> int:
 			memo[n]=climb(n-1)+climb(n-2)
 			return memo[n]
 	return climb(n)
+# **********************************************
+# 53. Maximum Subarray
+# **********************************************
+# DP: Kadane’s Algorithm,local max>global max
+def maxSubArray(nums: list[int]) -> int:
+	res,temp=-math.inf,0
+	for i in nums:
+		temp= max(i,i+temp)
+		if temp>res:
+			res=temp
+	return res
+# same logic
+def maxSubArray(nums: list[int]) -> int:
+	curMax,res=nums[0],nums[0]
+	for i in nums[1:]:
+		curMax=max(curMax+i,i)
+		res=max(res,curMax)
+	return res
+# dp: as long as the last elem>0-> effective add
+def maxSubArray(nums: list[int]) -> int:
+	for i in range(1, len(nums)):
+		if nums[i-1] > 0:
+			nums[i] += nums[i-1]
+		# print(i,nums)
+	return max(nums)
 
 if __name__=="__main__":
 	print('tst')
@@ -60,3 +85,8 @@ if __name__=="__main__":
 
 	# 70. Climbing Stairs
 	# print(climbStairs(5))
+
+	# 53. Maximum Subarray
+	# nums = [-2,1,-3,4,-1,2,1,-5,4]
+	# print(maxSubArray(nums))
+
