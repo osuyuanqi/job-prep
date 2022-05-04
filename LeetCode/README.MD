@@ -66,4 +66,4 @@
 
 - day33: #217. Contains Duplicate, #387. First Unique Character in a String, #108. Convert Sorted Array to Binary Search Tree, #268. Missing Number, #350. Intersection of Two Arrays II, #121. Best Time to Buy and Sell Stock, #21. Merge Two Sorted Lists ->[two pointer](https://stackoverflow.com/questions/58759348/when-does-a-pointer-to-a-linked-list-change-the-actual-list)
 
-- day34: #202 Happy Number, #118. Pascal's Triangle, #70. Climbing Stairs, #101. Symmetric Tree, #101. Symmetric Tree, #326. Power of Three, #191. Number of 1 Bits, #198. House Robber
+- day34: #202 Happy Number, #118. Pascal's Triangle, #70. Climbing Stairs, #101. Symmetric Tree, #101. Symmetric Tree, #326. Power of Three, #191. Number of 1 Bits, #198. House Robber, #509. Fibonacci Number

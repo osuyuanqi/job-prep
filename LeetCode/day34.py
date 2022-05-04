@@ -75,6 +75,27 @@ def maxSubArray(nums: list[int]) -> int:
 		# print(i,nums)
 	return max(nums)
 
+# **********************************************
+# 509. Fibonacci Number
+# **********************************************
+# memo
+def fib(n: int) -> int:
+	memo={0:0,1:1}
+	def f(n):
+		if n<2:
+			return n
+		else:
+			return f(n-1)+f(n-2)
+	return f(n)
+# iterative
+def fib(n: int) -> int:
+	if n <2:
+		return n
+	a,b=0,1
+	for i in range(1,n):
+		a,b=b,a+b
+	return b
+print(fib(2))
 if __name__=="__main__":
 	print('tst')
 	# 202. Happy Number
