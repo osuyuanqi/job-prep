@@ -95,6 +95,22 @@ def fib(n: int) -> int:
 	for i in range(1,n):
 		a,b=b,a+b
 	return b
+# **********************************************
+# 326. Power of Three
+# **********************************************
+# recursive
+def isPowerOfThree(n: int) -> bool:
+	if n ==0: return False
+	if n ==1: return True
+	if n %3==0:
+		return isPowerOfThree(n//3)
+	else: return False
+# iterative,1 and 0 is the key
+def isPowerOfThree(n: int) -> bool:
+	if n >0:
+		while n %3==0:
+			n//=3
+	return n==1
 
 if __name__=="__main__":
 	print('tst')
@@ -113,3 +129,6 @@ if __name__=="__main__":
 
 	# 509. Fibonacci Number
 	# print(fib(2))
+
+	# 326. Power of Three
+	# print(isPowerOfThree(45))
