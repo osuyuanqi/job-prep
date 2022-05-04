@@ -95,7 +95,7 @@ def fib(n: int) -> int:
 	for i in range(1,n):
 		a,b=b,a+b
 	return b
-print(fib(2))
+
 if __name__=="__main__":
 	print('tst')
 	# 202. Happy Number
@@ -111,3 +111,5 @@ if __name__=="__main__":
 	# nums = [-2,1,-3,4,-1,2,1,-5,4]
 	# print(maxSubArray(nums))
 
+	# 509. Fibonacci Number
+	# print(fib(2))
