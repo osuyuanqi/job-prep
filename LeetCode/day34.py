@@ -119,7 +119,31 @@ def rob(nums: list[int]) -> int:
 	for i in nums:
 		prev_max,curr_max=curr_max,max(prev_max+i,curr_max)
 	return curr_max
-nums = [2,7,9,3,1]
+
+# **********************************************
+# 191. Number of 1 Bits
+# **********************************************
+# str convert
+def hammingWeight(n: int) -> int:
+	bn='{:032b}'.format(n)
+	res=0
+	for i in bn:
+		if i=='1':
+			res+=1
+	return res
+# str count
+def hammingWeight(n: int) -> int:
+	# print(type(bin(n)))
+	return bin(n).count('1')
+# bit operation
+def hammingWeight(n: int) -> int:
+	res=0
+	while n!=0:
+		# whether the last elem is 1, since 1 is 00..01
+		res+=n&1
+		n>>=1
+		# print(n&1,n,res)
+	return res
 
 if __name__=="__main__":
 	print('tst')
@@ -144,3 +168,7 @@ if __name__=="__main__":
 
 	# 198. House Robber
 	# print(rob(nums))
+
+	# 191. Number of 1 Bits
+	# n = 11
+	# print(hammingWeight(n))
