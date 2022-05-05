@@ -111,6 +111,15 @@ def isPowerOfThree(n: int) -> bool:
 		while n %3==0:
 			n//=3
 	return n==1
+# **********************************************
+# 198. House Robber
+# **********************************************
+def rob(nums: list[int]) -> int:
+	prev_max,curr_max = 0,0
+	for i in nums:
+		prev_max,curr_max=curr_max,max(prev_max+i,curr_max)
+	return curr_max
+nums = [2,7,9,3,1]
 
 if __name__=="__main__":
 	print('tst')
@@ -132,3 +141,6 @@ if __name__=="__main__":
 
 	# 326. Power of Three
 	# print(isPowerOfThree(45))
+
+	# 198. House Robber
+	# print(rob(nums))

@@ -7,7 +7,7 @@ def isSymmetric(self, root: [TreeNode]) -> bool:
     def tst(rootleft,rootright):
         if rootleft == None or rootright==None:
             return rootleft==rootright
-        return rootleft.val ==rootleft.val and tst(rootleft.left,rootright.right) and tst(rootleft.right,rootright.left)
+        return rootright.val ==rootleft.val and tst(rootleft.left,rootright.right) and tst(rootleft.right,rootright.left)
         
     return tst(root.left,root.right)
 
