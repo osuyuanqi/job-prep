@@ -22,6 +22,16 @@ def twoSum(nums: list[int], target: int) -> list[int]:
 			return [memo[target-nums[i]],i]
 		else:
 			memo[nums[i]]=i
+# **********************************************
+# 172. Factorial Trailing Zeroes
+# **********************************************
+def trailingZeroes(self, n: int) -> int:
+	ct=0
+	while n//5!=0:
+		n//=5
+		# not 1,e.g.10!=(5*2)*9*..*5*..*1,leading 2 is what we want
+		ct+=n
+	return ct
 
 if __name__=="__main__":
 	print('tst')
