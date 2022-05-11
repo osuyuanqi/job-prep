@@ -1,3 +1,4 @@
+from pub_module import ListNode
 # **********************************************
 # 62. Unique Paths
 # **********************************************
@@ -40,24 +41,36 @@ def plusOne(digits: list[int]) -> list[int]:
 	it=str(int(s)+1)
 	res=list(map(int,it))
 	return res
-digits = [1,2,9]
-print(plusOne(digits))
 
 # **********************************************
 # 141. Linked List Cycle
 # **********************************************
-def hasCycle(self, head: Optional[ListNode]) -> bool:
-        fast,slow=head,head
-        # AND, since fast.next must have value, then fast.next.next maybe none
-        while fast and fast.next:
-            # fast.next.next may be none after loop
-            fast=fast.next.next
-            slow=slow.next
-            # judgement when done, since they're exactly same at the begining
-            if fast==slow:
-                return True
-        return False
-        
+# way1: double pointer
+def hasCycle(head: [ListNode]) -> bool:
+    fast,slow=head,head
+    # AND, since fast.next must have value, then fast.next.next maybe none
+    while fast and fast.next:
+        # fast.next.next may be none after loop
+        fast=fast.next.next
+        slow=slow.next
+        # judgement when done, since they're exactly same at the begining
+        if fast==slow:
+            return True
+    return False
+
+# way2: hash
+def hasCycle(head: [ListNode]) -> bool:
+	s=set()
+	while True:
+	    if head not in s:
+	        s.add(head)
+	    else:
+	        return True
+	    if head:
+	        head=head.next
+	    else:
+	        return False
+
 if __name__=="__main__":
 	print('tst')
 	
@@ -68,3 +81,7 @@ if __name__=="__main__":
 	# 1. Two Sum
 	# nums=[2,7,11,15];target=9
 	# print(twoSum(nums,target))
+
+	# 66. Plus One
+	# digits = [1,2,9]
+	# print(plusOne(digits))
