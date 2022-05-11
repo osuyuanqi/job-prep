@@ -68,4 +68,4 @@
 
 - day34: #202 Happy Number, #118. Pascal's Triangle, #70. Climbing Stairs, #101. Symmetric Tree, #326. Power of Three, #191. Number of 1 Bits, #198. House Robber, #509. Fibonacci Number
 
-- day35: #1. Two Sum, #26. Remove Duplicates from Sorted Array, #172. Factorial Trailing Zeroes, #62. Unique Paths, 
+- day35: #1. Two Sum, #26. Remove Duplicates from Sorted Array, #172. Factorial Trailing Zeroes, #66. Plus One, #62. Unique Paths, #20. Valid Parentheses, #141. Linked List Cycle, #234. Palindrome Linked List, #88. Merge Sorted Array

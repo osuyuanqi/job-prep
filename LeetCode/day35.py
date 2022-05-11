@@ -32,7 +32,32 @@ def trailingZeroes(self, n: int) -> int:
 		# not 1,e.g.10!=(5*2)*9*..*5*..*1,leading 2 is what we want
 		ct+=n
 	return ct
+# **********************************************
+# 66. Plus One
+# **********************************************
+def plusOne(digits: list[int]) -> list[int]:
+	s=''.join(map(str,digits))
+	it=str(int(s)+1)
+	res=list(map(int,it))
+	return res
+digits = [1,2,9]
+print(plusOne(digits))
 
+# **********************************************
+# 141. Linked List Cycle
+# **********************************************
+def hasCycle(self, head: Optional[ListNode]) -> bool:
+        fast,slow=head,head
+        # AND, since fast.next must have value, then fast.next.next maybe none
+        while fast and fast.next:
+            # fast.next.next may be none after loop
+            fast=fast.next.next
+            slow=slow.next
+            # judgement when done, since they're exactly same at the begining
+            if fast==slow:
+                return True
+        return False
+        
 if __name__=="__main__":
 	print('tst')
 	
