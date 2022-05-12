@@ -33,14 +33,6 @@ def trailingZeroes(self, n: int) -> int:
 		# not 1,e.g.10!=(5*2)*9*..*5*..*1,leading 2 is what we want
 		ct+=n
 	return ct
-# **********************************************
-# 66. Plus One
-# **********************************************
-def plusOne(digits: list[int]) -> list[int]:
-	s=''.join(map(str,digits))
-	it=str(int(s)+1)
-	res=list(map(int,it))
-	return res
 
 # **********************************************
 # 141. Linked List Cycle
@@ -71,6 +63,29 @@ def hasCycle(head: [ListNode]) -> bool:
 	    else:
 	        return False
 
+# **********************************************
+# 66. Plus One
+# **********************************************
+def plusOne(digits: list[int]) -> list[int]:
+	s=''.join(map(str,digits))
+	it=str(int(s)+1)
+	res=list(map(int,it))
+	return res
+# **********************************************
+# 88. Merge Sorted Array
+# requirement: change original nums1,return nothing
+# **********************************************
+def merge(nums1: list[int], m: int, nums2: list[int], n: int) -> None:
+	"""
+	Do not return anything, modify nums1 in-place instead.
+	"""
+	nums1[:m+n]=nums1[:m]+nums2
+	# nums1[:].sort()-> not works
+	nums1.sort() #works
+# one line 
+def merge(nums1: list[int], m: int, nums2: list[int], n: int) -> None:
+	nums1[:]=sorted(nums1[:m]+nums2)
+
 if __name__=="__main__":
 	print('tst')
 	
@@ -85,3 +100,8 @@ if __name__=="__main__":
 	# 66. Plus One
 	# digits = [1,2,9]
 	# print(plusOne(digits))
+
+	# 88. Merge Sorted Array
+	# nums1 = [1,2,3,0,0,0]; m = 3; nums2 = [2,5,6]; n = 3
+	# print(merge(nums1,3,nums2,3))
+	# print(nums1)
