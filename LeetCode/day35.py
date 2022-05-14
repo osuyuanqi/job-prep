@@ -1,8 +1,5 @@
 from pub_module import ListNode
 # **********************************************
-# 62. Unique Paths
-# **********************************************
-# **********************************************
 # 26. Remove Duplicates from Sorted Array
 # **********************************************
 def removeDuplicates(nums: list[int]) -> int:
@@ -71,6 +68,7 @@ def plusOne(digits: list[int]) -> list[int]:
 	it=str(int(s)+1)
 	res=list(map(int,it))
 	return res
+	
 # **********************************************
 # 88. Merge Sorted Array
 # requirement: change original nums1,return nothing
