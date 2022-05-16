@@ -103,3 +103,99 @@ var getIntersectionNode = function(headA, headB) {
         headB=headB.next
     }
 };
+
+// 234. Palindrome Linked List
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {boolean}
+ */
+var isPalindrome = function(head) {
+    // step1: find mid point
+    let fast=head,slow=head
+    while (fast&&fast.next){
+        fast=fast.next.next
+        slow=slow.next
+    }
+    // odd->move to the next
+    if (fast){
+        slow=slow.next
+    }
+    // step2: reverse the following slow, also the remaining half part
+    let prev=null
+    while (slow){
+        let temp = slow.next
+        slow.next=prev
+        prev=slow
+        slow=temp
+    }
+    // step3: compare prev(half head) and head
+    while (prev){
+        if (prev.val!=head.val)
+        {return false}
+        prev=prev.next
+        head=head.next
+    }
+    return true
+};
+
+
+// 155. Min Stack
+
+var MinStack = function() {
+    this.stack=[]
+    this.minStack=[]
+};
+
+/** 
+ * @param {number} val
+ * @return {void}
+ */
+MinStack.prototype.push = function(val) {
+    if (this.minStack.length!=0){
+        this.minStack.push(Math.min(this.minStack[this.minStack.length-1],val))
+    }
+    else{
+        this.minStack.push(val)
+    }
+    this.stack.push(val);
+    
+};
+
+/**
+ * @return {void}
+ */
+MinStack.prototype.pop = function() {
+    this.stack.pop()
+    this.minStack.pop()
+};
+
+/**
+ * @return {number}
+ */
+// return the top elem of STACK
+MinStack.prototype.top = function() {
+    return this.stack[this.stack.length-1]
+};
+
+/**
+ * @return {number}
+ */
+MinStack.prototype.getMin = function() {
+    return this.minStack[this.minStack.length-1]
+};
+
+/** 
+ * Your MinStack object will be instantiated and called as such:
+ * var obj = new MinStack()
+ * obj.push(val)
+ * obj.pop()
+ * var param_3 = obj.top()
+ * var param_4 = obj.getMin()
+ */
