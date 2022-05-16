@@ -1,5 +1,4 @@
 from pub_module import *
-
 # **********************************************
 # 234. Palindrome Linked List
 # even and odd condition
@@ -30,6 +29,35 @@ def isPalindrome(self, head: [ListNode]) -> bool:
             return False
         head = head.next
         prev = prev.next
+    return True
+
+def isPalindrome(head: [ListNode]) -> bool:
+    # step1: find mid point
+    fast,slow=head,head
+    while fast and fast.next:
+        fast=fast.next.next
+        slow=slow.next
+    #     print(fast,"ffff")
+    #     print(slow,"sssss")
+    # print(fast,"====")
+    # odd->move to the next node
+    if fast:
+    # print(slow)
+        slow=slow.next
+    # step2: reverse
+    prev=None
+    while slow:
+        temp=slow.next
+        slow.next=prev
+        prev=slow
+        slow=temp
+    # step3:compare original head and reversed slow (prev)
+    while prev:
+    # the length of prev is only the half of the original head
+        if head.val!=prev.val: 
+            return False
+        head=head.next
+        prev=prev.next
     return True
 # **********************************************
 # Find the smallest missing positive integer
