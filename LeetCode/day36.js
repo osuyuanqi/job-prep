@@ -199,3 +199,23 @@ MinStack.prototype.getMin = function() {
  * var param_3 = obj.top()
  * var param_4 = obj.getMin()
  */
+
+ // 14. Longest Common Prefix
+/**
+ * @param {string[]} strs
+ * @return {string}
+ */
+// prefix mean it should begin from 0, e.g.abc,bbc=>"";abc,acb=>"a"
+var longestCommonPrefix = function(strs) {
+    let res=strs[0]
+    for(let i=1;i<strs.length;i++){
+        // only string has substring function
+        // console.log(strs[1].substring(0,1))
+        while(res!=strs[i].substring(0,res.length)){
+            res=res.substring(0,res.length-1)
+        }
+    }
+    return res
+};
+// let strs=["flower","flow","flight"]
+// console.log(longestCommonPrefix(strs))
