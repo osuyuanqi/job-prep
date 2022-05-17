@@ -219,3 +219,38 @@ var longestCommonPrefix = function(strs) {
 };
 // let strs=["flower","flow","flight"]
 // console.log(longestCommonPrefix(strs))
+
+/**
+ * 38. Count and Say
+ * @param {number} n
+ * @return {string}
+ */
+var countAndSay = function(n) {
+    /* while loop {
+        res increacement;
+        temp store diff, then reset; 
+        }
+    */
+    let res="1"
+    while(n>1){
+        let curr=res[0],temp="",count=0
+        for (let i = 0; i < res.length; i++) {
+            if (res[i]==curr){
+                count++
+            }
+            else{
+                // temp only care about the current "for"
+                temp=temp+count+curr
+                count=1
+                curr=res[i]
+            }
+        }
+        // res reset each time
+        res=temp+count+curr
+        n--
+        // console.log("yy",temp,"xx",res,)
+    }
+    return res;
+};
+
+// console.log(countAndSay(4))
