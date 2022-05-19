@@ -254,3 +254,18 @@ var countAndSay = function(n) {
 };
 
 // console.log(countAndSay(4))
+
+/**
+ * 69. Sqrt(x)
+ * @param {number} x
+ * @return {number}
+ */
+var mySqrt = function (x) {
+  let res = 1;
+  while (res * res < x) {
+    res += 1;
+  }
+  if (res * res === x) return res;
+  else return res - 1;
+};
+console.log(mySqrt(8));
