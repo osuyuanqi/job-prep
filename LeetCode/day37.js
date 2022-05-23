@@ -23,3 +23,49 @@ var isPalindrome = function (s) {
 };
 let s = "A man, a plan, a canal: Panama";
 console.log(isPalindrome(s));
+
+// 189. Rotate Array
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {void} Do not return anything, modify nums in-place instead.
+ */
+var rotate = function (numsa, k) {
+  const newK = k % nums.length;
+  let newA = nums.splice(-newK);
+  nums.splice(0, 0, ...newA);
+};
+(nums = [1, 2, 3, 4, 5, 6, 7]), (k = 3);
+rotate(nums, k);
+console.log(nums);
+
+// 7. Reverse Integer
+
+/**
+ * @param {number} x
+ * @return {number}
+ */
+var reverse = function (x) {
+  const sign = x > 0 ? 1 : -1;
+  let a = x * sign;
+  let b = a.toString().split("").reverse().join("");
+  let res = sign * parseInt(b);
+  return res > (-2) ** 31 && res < 2 ** 31 - 1 ? res : 0;
+};
+
+var reverse = function (x) {
+  const sign = x > 0 ? 1 : -1;
+  let a = x * sign;
+  ([res,c])=([0,0])
+  console.log(b,c);
+  while (a) {
+     res = a % 10+res*10;
+    a=Math.floor(a/10);
+    console.log(res,a);
+  }
+  res *= sign;
+  return res > (-2) ** 31 && res < 2 ** 31 - 1 ? res : 0;
+};
+
+const x = -123;
+console.log(reverse(x));
