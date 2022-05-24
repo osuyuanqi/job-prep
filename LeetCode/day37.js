@@ -199,4 +199,4 @@ var countPrimes = function (n) {
   return arr.reduce(((a,b)=>a+b));
 };
 
-console.log(countPrimes(8));
+// console.log(countPrimes(8));

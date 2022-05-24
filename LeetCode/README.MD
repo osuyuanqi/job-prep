@@ -72,4 +72,6 @@
 
 - day36**(Convert to JS)**: #20. Valid Parentheses, #234. Palindrome Linked List, #155. Min Stack, #14. Longest Common Prefix, #160. Intersection of Two Linked Lists, #38. Count and Say, #28. Implement strStr(), #69. Sqrt(x)
 
-- day37: #190. Reverse Bits, #125. Valid Palindrome, #189. Rotate Array, #204 Count Primes, #7 Reverse Integer, #94. Binary Tree Inorder Traversal, #344. Reverse String, #62. Unique Paths
+- day37: #190. Reverse Bits, #125. Valid Palindrome, #189. Rotate Array, #204 Count Primes, #7 Reverse Integer, #94. Binary Tree Inorder Traversal, #344. Reverse String
+
+- day38: #62. Unique Paths, #2108. Find First Palindromic String in the Array, #680. Valid Palindrome II
