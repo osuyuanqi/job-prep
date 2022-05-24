@@ -57,7 +57,6 @@ var reverse = function (x) {
   const sign = x > 0 ? 1 : -1;
   let a = x * sign;
   ([res,c])=([0,0])
-  console.log(b,c);
   while (a) {
      res = a % 10+res*10;
     a=Math.floor(a/10);
@@ -69,3 +68,25 @@ var reverse = function (x) {
 
 const x = -123;
 console.log(reverse(x));
+
+// 344. Reverse String
+/**
+ * @param {character[]} s
+ * @return {void} Do not return anything, modify s in-place instead.
+ */
+// built-in function
+var reverseString = function(s) {
+  s.reverse().join("");
+};
+// swap
+var reverseString = function(s) {
+  let l=0,r=s.length-1;
+  while (l<r){
+    [s[l],s[r]]=[s[r],s[l]]
+    l++;
+    r--;
+  }
+};
+s = ["h","e","l","l","o",'a'];
+reverseString(s)
+console.log(s)
