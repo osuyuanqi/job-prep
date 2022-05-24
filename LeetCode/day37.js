@@ -90,3 +90,47 @@ s = ["h","e","l","l","o",'a'];
 // reverseString(s);
 // console.log(s);
 
+// 94. Binary Tree Inorder Traversal
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number[]}
+ */
+// recursieve
+ var inorderTraversal = function(root) {
+  const res=[];
+  const rev=function(r){
+      if (r==null){
+          return;
+      }
+      rev(r.left);
+      res.push(r.val);
+      rev(r.right);
+  }
+  rev(root);
+  return res;
+};
+//iterative
+var inorderTraversal = function(root) { 
+  const stack=[],res=[];
+  let curr=root;
+  //stack.length===0, means false
+  while (root!=null||stack.length){
+      while (root!=null){
+          stack.push(root);
+          root=root.left;
+      }
+      curr = stack.pop();
+      res.push(curr.val);
+      //finish one branch first
+      root=curr.right
+  }
+  return res;
+}
