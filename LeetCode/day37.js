@@ -21,7 +21,7 @@ var isPalindrome = function (s) {
   const a = s.replace(/[^A-Za-z0-9]/g, "").toLowerCase();
   return a.split("").reverse().join("") === a;
 };
-let s = "A man, a plan, a canal: Panama";
+// let s = "A man, a plan, a canal: Panama";
 // console.log(isPalindrome(s));
 
 // 189. Rotate Array
@@ -35,7 +35,7 @@ var rotate = function (numsa, k) {
   let newA = nums.splice(-newK);
   nums.splice(0, 0, ...newA);
 };
-(nums = [1, 2, 3, 4, 5, 6, 7]), (k = 3);
+// (nums = [1, 2, 3, 4, 5, 6, 7]), (k = 3);
 // rotate(nums, k);
 // console.log(nums);
 
@@ -65,7 +65,7 @@ var reverse = function (x) {
   return res > (-2) ** 31 && res < 2 ** 31 - 1 ? res : 0;
 };
 
-const x = -123;
+// const x = -123;
 // console.log(reverse(x));
 
 // 344. Reverse String
@@ -86,7 +86,7 @@ var reverseString = function(s) {
     r--;
   }
 };
-s = ["h","e","l","l","o",'a'];
+// s = ["h","e","l","l","o",'a'];
 // reverseString(s);
 // console.log(s);
 
@@ -134,3 +134,69 @@ var inorderTraversal = function(root) {
   }
   return res;
 }
+
+// 204. Count Primes
+/**
+ * @param {number} n
+ * @return {number}
+ */
+ var countPrimes = function (n) {
+  if (n < 3) return 1;
+  let res = 0;
+  //   let half = Math.floor(Math.sqrt(n));
+  let half = n;
+  console.log(half);
+  for (let i = 3; i < half; i++) {
+    // if
+    let isPri = true;
+    for (let j = 2; j < i; j++) {
+      if (i % j === 0) isPri = false;
+    }
+    // console.log(isPri);
+    if (isPri) res++;
+  }
+  return res + 1;
+};
+// console.log(countPrimes(8));
+
+// method2: check half, but use n
+function isPri(n) {
+  let checkPri = true;
+  let half = Math.floor(Math.sqrt(n)) + 1;
+  console.log(half);
+  for (let j = 2; j < half; j++) {
+    // use n-> the original value
+    if (n % j === 0) {
+      checkPri = false;
+      break;
+    }
+  }
+  return checkPri;
+}
+
+var countPrimes = function (n) {
+  //   let res = 0,arr=[0]*n;
+  if (n < 3) return 1;
+  let res = 0;
+  for (let i = 3; i < n; i++) {
+    if (isPri(i)) res++;
+  }
+  return res + 1;
+};
+
+//way3: dynamic programming
+var countPrimes = function (n) {
+  if (n < 3) return 0;
+  let arr = new Array(n).fill(1);
+  arr[0]=arr[1]=0;
+  for(let i=2;i*i<n;i++){
+      if(!arr[i]){continue;}
+      for(let j=i*i;j<n;j+=i){
+          arr[j]=0;
+      }
+  }
+  console.log(arr);
+  return arr.reduce(((a,b)=>a+b));
+};
+
+console.log(countPrimes(8));
