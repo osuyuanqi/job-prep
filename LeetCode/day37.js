@@ -22,7 +22,7 @@ var isPalindrome = function (s) {
   return a.split("").reverse().join("") === a;
 };
 let s = "A man, a plan, a canal: Panama";
-console.log(isPalindrome(s));
+// console.log(isPalindrome(s));
 
 // 189. Rotate Array
 /**
@@ -36,11 +36,10 @@ var rotate = function (numsa, k) {
   nums.splice(0, 0, ...newA);
 };
 (nums = [1, 2, 3, 4, 5, 6, 7]), (k = 3);
-rotate(nums, k);
-console.log(nums);
+// rotate(nums, k);
+// console.log(nums);
 
 // 7. Reverse Integer
-
 /**
  * @param {number} x
  * @return {number}
@@ -67,7 +66,7 @@ var reverse = function (x) {
 };
 
 const x = -123;
-console.log(reverse(x));
+// console.log(reverse(x));
 
 // 344. Reverse String
 /**
@@ -88,5 +87,6 @@ var reverseString = function(s) {
   }
 };
 s = ["h","e","l","l","o",'a'];
-reverseString(s)
-console.log(s)
+// reverseString(s);
+// console.log(s);
+
