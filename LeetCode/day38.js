@@ -3,8 +3,8 @@
  * @param {string} s
  * @return {boolean}
  */
+// way1: consider odd and left
 var validPalindrome = function (s) {
-  //   if (s.length < 2) return false;
   let l = 0,
     r = s.length - 1;
   let arr = [];
@@ -26,5 +26,26 @@ var validPalindrome = function (s) {
   }
   return true;
 };
-const s = "abdeaedca";
+// way2: move left and right explaination
+function isPar(s) {
+    // console.log(s)
+    return s===s.split("").reverse().join("")
+}
+var validPalindrome = function (s) {
+  let l = 0,
+    r = s.length - 1;
+  let arr = [];
+  // res = 0;
+  while (l < r) {
+    if (s[l] !== s[r]) {
+        // move right, skip l->[l+1,r+1) ;or move left, skip r->[l,r)
+        // console.log(s[l],s[r])
+      return isPar(s.substring(l+1,r+1))||isPar(s.substring(l,r));
+    }
+    l++;
+    r--;
+  }
+  return true;
+};
+const s = "aeab";
 console.log(validPalindrome(s));
