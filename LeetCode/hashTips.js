@@ -1,5 +1,5 @@
 /*************************************************
- * tips: set/dic
+ * tips: object, e.g.set/dic, use "in" to access elem
  ************************************************/
 // dic/set added
 let dic = {0:1}
@@ -25,7 +25,7 @@ set=new Set(nums)
 // console.log(set,Array.from(set));
 
 /*************************************************
- * tips: array usage
+ * tips: array&string, iteratable, use "of"
  ************************************************/
 
 // array in->index
