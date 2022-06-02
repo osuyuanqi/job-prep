@@ -1,6 +1,6 @@
 # LeetCode log
 
-- day1: #344 Reverse String, #412 fizzBuzz, #136 Single Number, #198 House Robber
+- day1**(first)**: #344 Reverse String, #412 fizzBuzz, #136 Single Number, #198 House Robber
 
 - day2: #104 Maximum Depth of Binary Tree, #283 Move Zeroes
 
@@ -60,7 +60,7 @@
 
 - day30: #189. Rotate Array, #204. Count Primes, #190. Reverse Bits, #155. Min Stack, **#94. Binary Tree Inorder Traversal[iterative need improve]**
 
-- day31: #344 Reverse String, #412 Fizz Buzz, #136 Single Number, #217. Contains Duplicate, #168. Excel Sheet Column Title, #171. Excel Sheet Column Number
+- day31 **(twice)**: #344 Reverse String, #412 Fizz Buzz, #136 Single Number, #217. Contains Duplicate, #168. Excel Sheet Column Title, #171. Excel Sheet Column Number
 
 - day32: #104. Maximum Depth of Binary Tree, #283. Move Zeroes, #371. Sum of Two Integers, #206. Reverse Linked List, #237. Delete Node in a Linked List, #169. Majority Element, #13. Roman to Integer, #122. Best Time to Buy and Sell Stock II, #242. Valid Anagram
 
@@ -70,8 +70,14 @@
 
 - day35: #1. Two Sum, #26. Remove Duplicates from Sorted Array, #172. Factorial Trailing Zeroes, #141. Linked List Cycle, #66. Plus One, #88. Merge Sorted Array
 
-- day36**(Convert to JS)**: #20. Valid Parentheses, #234. Palindrome Linked List, #155. Min Stack, #14. Longest Common Prefix, #160. Intersection of Two Linked Lists, #38. Count and Say, #28. Implement strStr(), #69. Sqrt(x)
+- day36 **(Convert to JS)**: #20. Valid Parentheses, #234. Palindrome Linked List, #155. Min Stack, #14. Longest Common Prefix, #160. Intersection of Two Linked Lists, #38. Count and Say, #28. Implement strStr(), #69. Sqrt(x)
 
 - day37: #190. Reverse Bits, #125. Valid Palindrome, #189. Rotate Array, #204 Count Primes, #7 Reverse Integer, #94. Binary Tree Inorder Traversal, #344. Reverse String
 
-- day38: #62. Unique Paths, #2108. Find First Palindromic String in the Array, #680. Valid Palindrome II
+- day38: #2108. Find First Palindromic String in the Array, #680. Valid Palindrome II
+
+- day39: #344. Reverse String, #412 Fizz Buzz, #136 Single Number, #104. Maximum Depth of Binary Tree, #283. Move Zeroes, #371. Sum of Two Integers, #206. Reverse Linked List, #171. Excel Sheet Column Number
+
+- day40: #169. Majority Element, #13. Roman to Integer, #237. Delete Node in a Linked List, #122. Best Time to Buy and Sell Stock II , #242 Valid Anagram, #217. Contains Duplicate, #387. First Unique Character in a String, 
+
+- day41: #108. Convert Sorted Array to Binary Search Tree, #268. Missing Number, #350. Intersection of Two Arrays II, #168. Excel Sheet Column Title, #121. Best Time to Buy and Sell Stock, #21. Merge Two Sorted Lists ->[two pointer](https://stackoverflow.com/questions/58759348/when-does-a-pointer-to-a-linked-list-change-the-actual-list), #202. Happy Number, #118. Pascal's Triangle, #70. Climbing Stairs, #101. Symmetric Tree,
