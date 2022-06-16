@@ -3,6 +3,8 @@
  * @param {number[]} nums
  * @return {number}
  */
+// dp: need to store negative, since it might larger when counters another negative value
+// only need max value, so no need to extra space to store same max value
  var maxProduct = function (nums) {
     let currMax = 1,
       currMin = 1;
