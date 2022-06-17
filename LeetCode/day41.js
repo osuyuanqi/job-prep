@@ -73,7 +73,7 @@ var maxProduct = function (nums) {
   var search = function (nums, target) {
     let l = 0,
       r = nums.length - 1;
-      //= necessary, e.g.[1],1=>the while won't execute
+    //= necessary, e.g.[1],1=>the while won't execute
     while (l <= r) {
       if (nums[l] === target) return l;
       if (nums[r] === target) return r;
@@ -84,8 +84,9 @@ var maxProduct = function (nums) {
   };
   
   var search = function (nums, target) {
-    let l = 0;
-    (r = nums.length - 1), (m = 0);
+    let l = 0,
+      r = nums.length - 1,
+      m = 0;
     //find min
     while (l < r) {
       m = Math.floor((l + r) / 2);
@@ -106,7 +107,7 @@ var maxProduct = function (nums) {
     } else {
       r = min;
     }
-    //ordinary binary search
+    //ordinary binary search,=single value,e.g.[1],1
     while (l <= r) {
       m = Math.floor((l + r) / 2);
       if (target === nums[m]) {
@@ -118,7 +119,75 @@ var maxProduct = function (nums) {
     return -1;
   };
   
-  const nums2 = [ 5,6,7,1,2,3,4],
-    target = 4;
+  const nums2 = [3, 1];
+  target = 3;
   console.log(search(nums2, target));
+  // 15. 3Sum
+  /**
+   * @param {number[]} nums
+   * @return {number[][]}
+   */
+  // hash method
+  var threeSum = function (nums) {
+    // nums.sort();
+    // reliable sort
+    nums.sort((a, b) => a - b);
+    // console.log(nums);
+    let res = [];
+    const set = new Set();
+    for (let i = 0; i < nums.length; i++) {
+      // undefined the first time
+      if (nums[i] === nums[i - 1]) continue;
+      const map = new Map();
+      for (let j = i + 1; j < nums.length; j++) {
+        let target = -(nums[i] + nums[j]);
+        //tip: convert set value into string, since different obj if not convert
+        if (map.has(target) && !set.has(`${[nums[i], nums[j], target]}`)) {
+          res.push([nums[i], nums[j], target]);
+          set.add(`${[nums[i], nums[j], target]}`);
+        }
+        map.set(nums[j]);
+      }
+    }
+  
+    return res;
+  };
+  // skip tips
+  var threeSum1 = function (nums) {
+    if (nums.length == 0 || nums.length < 3) return [];
+  
+    nums.sort((a, b) => a - b);
+    console.log(nums);
+    // const set = new Set();
+    const res = [];
+    for (let i = 0; i < nums.length; i++) {
+      //fixed i,another [the next value,len-1]
+      let low = i + 1,
+        high = nums.length - 1;
+      while (low < high) {
+        const sum = nums[i] + nums[low] + nums[high];
+  
+        if (sum === 0) {
+          res.push([nums[i], nums[low], nums[high]]);
+          //skip duplicate elem
+          while (nums[low] === nums[low + 1]) low++;
+          while (nums[high] === nums[high - 1]) high--;
+          low++;
+          high--;
+        } else if (sum > 0) {
+          high--;
+        } else {
+          low++;
+        }
+      }
+      while (nums[i] === nums[i + 1]) i++;
+    }
+    return res;
+  };
+  const nums3 = [-1, 0, 1, 2, -1, -4, -2, -3, 3, 0, 4];
+  console.log(threeSum(nums3));
+  // let arr=new Set()
+  // arr.add([1,1,1])
+  // arr.add([1,1,1])
+  // console.log(...new Set(arr))
   
