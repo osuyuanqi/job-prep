@@ -43,3 +43,19 @@ def maxProfit(prices:list[int])->int:
     return maxP
 prices = [7,1,5,3,6,4]
 print(maxProfit(prices))
+
+# 20. Valid Parentheses
+def isValid(s:str)->bool:
+    stack=[]
+    closeToOpen={")":"(","]":"[","}":"{"}
+    for c in s:
+        if c in closeToOpen:
+            if stack and stack[-1]==closeToOpen[c]:
+                stack.pop()
+            else:
+                return False
+        else:
+            stack.append(c)
+    return not stack
+s = "{[]}"    
+print(isValid(s))
