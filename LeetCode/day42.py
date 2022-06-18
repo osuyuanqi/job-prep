@@ -27,7 +27,7 @@ def maxProfit(prices:list[int])->int:
         if prices[i]-minV>res:
             res=prices[i]-minV
     return res
-# two pointers
+# two pointers&sliding window
 def maxProfit(prices:list[int])->int:
     l,r=0,1
     maxP=0
