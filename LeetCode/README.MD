@@ -78,6 +78,10 @@
 
 - day39: #344. Reverse String, #412 Fizz Buzz, #136 Single Number, #104. Maximum Depth of Binary Tree, #283. Move Zeroes, #371. Sum of Two Integers, #206. Reverse Linked List, #171. Excel Sheet Column Number
 
-- day40: #169. Majority Element, #13. Roman to Integer, #237. Delete Node in a Linked List, #122. Best Time to Buy and Sell Stock II , #242 Valid Anagram, #217. Contains Duplicate, #387. First Unique Character in a String, 
+- day40: 1, 121, 217, 219, 238, 53
 
-- day41: #108. Convert Sorted Array to Binary Search Tree, #268. Missing Number, #350. Intersection of Two Arrays II, #168. Excel Sheet Column Title, #121. Best Time to Buy and Sell Stock, #21. Merge Two Sorted Lists ->[two pointer](https://stackoverflow.com/questions/58759348/when-does-a-pointer-to-a-linked-list-change-the-actual-list), #202. Happy Number, #118. Pascal's Triangle, #70. Climbing Stairs, #101. Symmetric Tree,
+- day41: 152, 153, 33, 15, 1, 167
+
+- day42: 169, 13, 237, 122, 242, 387
+
+- day43: 108, 268, 350, 168, 121, 21, 202, 118, 70, 101
