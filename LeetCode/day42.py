@@ -13,8 +13,6 @@ def isPalindrome(s: str) -> bool:
         l+=1
         r-=1
     return True 
-s = "A man, a plan, a canal: Panama"
-print(isPalindrome(s))
 
 # 121. Best Time to Buy and Sell Stock
 # keep track the min
@@ -41,8 +39,6 @@ def maxProfit(prices:list[int])->int:
             l=r
         r+=1
     return maxP
-prices = [7,1,5,3,6,4]
-print(maxProfit(prices))
 
 # 20. Valid Parentheses
 def isValid(s:str)->bool:
@@ -57,5 +53,49 @@ def isValid(s:str)->bool:
         else:
             stack.append(c)
     return not stack
-s = "{[]}"    
-print(isValid(s))
+
+# 33. Search in Rotated Sorted Array
+def search(nums:list[int],target:int)->int:
+    # l,r=0,len(nums)-1
+    minV=nums[0];minI=0
+    # step1: find mid point
+    for i in range(len(nums)):
+        if nums[i]<minV:
+            minI=i
+            break
+    # step2: decide direction
+    l,r=0,len(nums)-1
+    if target==nums[minI]:
+        return minI
+    # left part
+    elif nums[minI]<target<=nums[len(nums)-1]:
+        l=minI
+    # right part
+    else:
+        r=minI
+        
+    # step3: bs,== only 1 elem
+    while l<=r:
+        mid=(l+r)//2
+        if nums[mid]==target:
+            return mid
+        elif nums[mid]<target:
+            l=mid+1
+        else:
+            r=mid-1
+    return -1
+if __name__=="__main__":
+    print('test')
+    # 125
+    # s = "A man, a plan, a canal: Panama"
+    # print(isPalindrome(s))
+    # 121
+    # prices = [7,1,5,3,6,4]
+    # print(maxProfit(prices))
+
+    # 20
+    # s = "{[]}"    
+    # print(isValid(s))
+    # 33
+    # nums = [3,1]; target = 3
+    # print(search(nums,target))
