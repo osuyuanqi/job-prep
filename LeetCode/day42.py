@@ -1,3 +1,4 @@
+from pub_module import *
 # 125. Valid Palindrome
 def isAlNum(c):
     return (ord('a')<=ord(c)<=ord('z')) or         (ord('A')<=ord(c)<=ord('Z')) or         (ord('0')<=ord(c)<=ord('9'))
@@ -104,11 +105,73 @@ def findMin(nums):
             r=m-1
     return res
 
+# 347. Top K Frequent Elements
+def topKFrequent(nums: list[int], k: int):
+    dic={}
+    for i in nums:
+        if i not in dic:
+            dic[i]=1
+        else:
+            dic[i]+=1
+    print(dic)
+    a=[[k, v] for k, v in sorted(dic.items(), reverse=True,key=lambda item: item[1])]
+    # print(a)
+    res=[]
+    for i in range(k):
+        # print(a[i])
+        res.append(a[i][0])
+    return res
+
+# 206. Reverse Linked List
+# iterative
+def reverseList(self, head: [ListNode]) -> [ListNode]:
+    prev,curr=None,head
+    while curr:
+        temp=curr.next
+        # print(curr,"llll")
+        curr.next=prev
+        prev=curr
+        curr=temp
+    return prev
+# recursive
+def reverseList(self, head: [ListNode]) -> [ListNode]:
+    # head may have values
+    if not head or not head.next:
+        return head
+    reversedNode=self.reverseList(head.next)
+    # the next value of the next node (head.next)
+    head.next.next=head
+    # the next value
+    head.next=None
+    return reversedNode
+
+# 21. Merge Two Sorted Lists
+def mergeTwoLists(self, list1: [ListNode], list2: [ListNode]) -> [ListNode]:
+    # dummy is used for avoid edge cases
+    dummy = ListNode()
+    # move tail, instead of dummy
+    tail = dummy
+    while list1 and list2:
+        if list1.val>list2.val:
+            tail.next=list2
+            list2=list2.next
+        else:
+            tail.next=list1
+            list1=list1.next
+        tail=tail.next
+    if list1:
+        tail.next=list1
+    if list2:
+        tail.next=list2
+    return dummy.next
+
 if __name__=="__main__":
     print('test')
+    
     # 125
     # s = "A man, a plan, a canal: Panama"
     # print(isPalindrome(s))
+    
     # 121
     # prices = [7,1,5,3,6,4]
     # print(maxProfit(prices))
@@ -116,10 +179,15 @@ if __name__=="__main__":
     # 20
     # s = "{[]}"    
     # print(isValid(s))
+    
     # 33
     # nums = [3,1]; target = 3
     # print(search(nums,target))
 
     # 153
-    nums = [4,5,1,2,3]
-    print(findMin(nums))
+    # nums = [4,5,1,2,3]
+    # print(findMin(nums))
+    
+    # 347
+    # nums = [1,1,1,2,2,3]; k = 2
+    # print(topKFrequent(nums,k))
