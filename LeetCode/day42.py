@@ -84,6 +84,26 @@ def search(nums:list[int],target:int)->int:
         else:
             r=mid-1
     return -1
+
+# 153. Find Minimum in Rotated Sorted Array
+def findMin(nums):
+    l,r=0,len(nums)-1
+    res=nums[0]
+    while l <= r:
+        # end: nums[l] should < nums[r]
+        if nums[l]<nums[r]:
+            # not sure res in the left/right last time??
+            res=min(res,nums[l])
+            break
+        m=(l+r)//2
+        res=min(res,nums[m])
+        # e.g.==,[1,5], not skip 5
+        if nums[m]>=nums[l]:
+            l=m+1
+        else:
+            r=m-1
+    return res
+
 if __name__=="__main__":
     print('test')
     # 125
@@ -99,3 +119,7 @@ if __name__=="__main__":
     # 33
     # nums = [3,1]; target = 3
     # print(search(nums,target))
+
+    # 153
+    nums = [4,5,1,2,3]
+    print(findMin(nums))
