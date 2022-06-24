@@ -20,7 +20,7 @@
 #### CAP Theorem
 - distributed system has three significant characteristics: Consistency, Availability, Partition tolerance.
 - They can't be existed same time, assume: G1,G2 are servers, client. since:
-  - **Partition tolerance** can't be avoided because the information can be transfer errors.
+  - **Partition tolerance** can't be avoided-> information may transfer errors.
   - [e.g.](https://www.ruanyifeng.com/blog/2018/07/cap.html) when G1 transfer info to G2. If keeps consistency, G2 should be locked and can't be wrote, which means that the availability is not accessble.
 - Q: when to choose A over C? e.g. there's a fault in your website->need to update every pages. Though some pages maybe not that latest, they could be updated later.
 - You can only pick two out of three at a time and that totally depends on your prioritize based on your requirements. For example, if your system needs to be available and partition tolerant, then you must be willing to accept some latency in your consistency requirements.
