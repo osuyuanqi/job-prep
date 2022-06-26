@@ -84,7 +84,8 @@
 
 - day42 (Python): 125, 121, 20, 33, 153, 347, 206, 21
 
-- day43: 13, 169, 217, 242, 49, 237, 122, 387
+- day43: 13, 169, 217, 242, 49
 
 - PyRev: followed by the "Python Programming and Text Processing" from [prof.Liang Huang](https://web.engr.oregonstate.edu/~huanlian/teaching/python-2012f/)
-- day44: 108, 268, 350, 168, 202, 118, 70, 101
+
+- day44 (JS): , 237, 122, 387, 108, 268, 350, 168, 202, 118, 70, 101
