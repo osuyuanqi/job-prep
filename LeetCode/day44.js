@@ -26,13 +26,13 @@ var maxProfit = function (prices) {
   let profit = 0;
   for (let i = 1; i < prices.length; i++) {
     if (prices[i] > prices[i - 1]) {
-        profit+=prices[i]-prices[i-1]
+      profit += prices[i] - prices[i - 1];
     }
   }
   return profit;
 };
 
-// const prices = [7, 1, 5, 3, 6, 4];
+const prices = [7, 1, 5, 3, 6, 4];
 console.log(maxProfit(prices));
 
 // 387. First Unique Character in a String
@@ -40,6 +40,22 @@ console.log(maxProfit(prices));
  * @param {string} s
  * @return {number}
  */
- var firstUniqChar = function(s) {
-    
+var firstUniqChar = function (s) {
+  const charDic = {};
+  for (let i=0;i< s.length;i++) {
+    if (s[i] in charDic) charDic[s[i]][1] += 1;
+    else {
+      charDic[s[i]] = [i,1];
+    }
+  }
+  // O(n), check the unique one
+  for (const v of Object.values(charDic)) {
+    if (v[1] === 1) {
+      return v[0];
+    }
+  }
+  return -1;
 };
+
+const s = "leetcodel";
+console.log(firstUniqChar(s));
