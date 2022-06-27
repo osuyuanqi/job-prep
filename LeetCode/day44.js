@@ -86,3 +86,30 @@ var sortedArrayToBST = function (nums) {
 };
 const nums = [-10, -3, 0, 5, 9];
 console.log(sortedArrayToBST(nums));
+
+// 268. Missing Number
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+// Hash
+var missingNumber = function (nums) {
+  const missSet = new Set();
+  for (const i of nums) {
+    missSet.add(i);
+  }
+  console.log(missSet);
+  for (let j = 0; j < nums.length + 1; j++) {
+    if (!missSet.has(j)) {
+      return j;
+    }
+  }
+};
+// Math method
+var missingNumber = function (nums) {
+  const sum = nums.reduce((prev, curr) => curr + prev, 0);
+  return ((nums.length + 1) * nums.length) / 2 - sum;
+};
+
+const nums1 = [4, 3, 2, 1];
+console.log(missingNumber(nums1));
