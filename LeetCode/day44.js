@@ -42,10 +42,10 @@ console.log(maxProfit(prices));
  */
 var firstUniqChar = function (s) {
   const charDic = {};
-  for (let i=0;i< s.length;i++) {
+  for (let i = 0; i < s.length; i++) {
     if (s[i] in charDic) charDic[s[i]][1] += 1;
     else {
-      charDic[s[i]] = [i,1];
+      charDic[s[i]] = [i, 1];
     }
   }
   // O(n), check the unique one
@@ -59,3 +59,30 @@ var firstUniqChar = function (s) {
 
 const s = "leetcodel";
 console.log(firstUniqChar(s));
+// 108. Convert Sorted Array to Binary Search Tree
+/**
+ */
+/**
+ * @param {number[]} nums
+ * @return {TreeNode}
+ */
+
+// Definition for a binary tree node.
+function TreeNode(val, left, right) {
+  this.val = val === undefined ? 0 : val;
+  this.left = left === undefined ? null : left;
+  this.right = right === undefined ? null : right;
+}
+var sortedArrayToBST = function (nums) {
+  // terminate condition when loop finished
+  if (nums.length === 0) return null;
+  let mid = Math.floor(nums.length / 2);
+  // only the mid was left
+  const root = new TreeNode(nums[mid]);
+  // recursive loop, index
+  root.left = sortedArrayToBST(nums.slice(0, mid));
+  root.right = sortedArrayToBST(nums.slice(mid + 1, nums.length));
+  return root;
+};
+const nums = [-10, -3, 0, 5, 9];
+console.log(sortedArrayToBST(nums));
