@@ -113,3 +113,29 @@ var missingNumber = function (nums) {
 
 const nums1 = [4, 3, 2, 1];
 console.log(missingNumber(nums1));
+
+// 168. Excel Sheet Column Title
+/**
+ * @param {number} columnNumber
+ * @return {string}
+ */
+var convertToTitle = function (columnNumber) {
+  let res = [];
+  while (columnNumber > 0) {
+    // use -1
+    columnNumber--;
+    let remainder = columnNumber % 26;
+    // use -1, to avoid the next loop, e.g. 26=>0; if not-1, 26/26===1=>next loop
+    columnNumber = Math.floor(columnNumber / 26);
+
+    console.log(res, columnNumber, remainder);
+    // tip: not res+=..; to avoid reverse string
+    res = String.fromCharCode(remainder + 65)+res;
+
+  }
+  return res
+};
+const columnNumber = 701;
+console.log(convertToTitle(columnNumber));
+
+console.log(String.fromCharCode(90))
