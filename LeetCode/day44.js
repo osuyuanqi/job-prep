@@ -130,12 +130,37 @@ var convertToTitle = function (columnNumber) {
 
     console.log(res, columnNumber, remainder);
     // tip: not res+=..; to avoid reverse string
-    res = String.fromCharCode(remainder + 65)+res;
-
+    res = String.fromCharCode(remainder + 65) + res;
   }
-  return res
+  return res;
 };
 const columnNumber = 701;
 console.log(convertToTitle(columnNumber));
 
-console.log(String.fromCharCode(90))
+// 350. Intersection of Two Arrays II
+/**
+ * @param {number[]} nums1
+ * @param {number[]} nums2
+ * @return {number[]}
+ */
+var intersect = function (nums1, nums2) {
+  const dic = {};
+  for (const i of nums1) {
+    if (i in dic) {
+      dic[i]++;
+    } else {
+      dic[i] = 1;
+    }
+  }
+  const res = [];
+  for (const j of nums2) {
+    if (j in dic) {
+      dic[j]--;
+      if (dic[j] >= 0) res.push(j);
+    }
+  }
+  return res;
+};
+const nums2 = [4, 9, 5],
+  nums3 = [9, 4, 9, 8, 4];
+console.log(intersect(nums2, nums3));
