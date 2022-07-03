@@ -164,3 +164,32 @@ var intersect = function (nums1, nums2) {
 const nums2 = [4, 9, 5],
   nums3 = [9, 4, 9, 8, 4];
 console.log(intersect(nums2, nums3));
+
+// 202. Happy Number
+/**
+ * @param {number} n
+ * @return {boolean}
+ */
+var isHappy = function (n) {
+  const _set = new Set();
+  let nextValue = n;
+  while (nextValue != 1) {
+    let elem = nextValue.toString().split("");
+    let res = 0;
+    for (const i of elem) {
+      let j = parseInt(i);
+      res += j * j;
+    }
+    // console.log(res)
+    nextValue = res;
+    // console.log(_set);
+    if (!_set.has(nextValue)) {
+      _set.add(nextValue);
+    } else {
+      return false;
+    }
+  }
+  return true;
+};
+const n = 2;
+console.log(isHappy(n));
