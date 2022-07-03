@@ -193,3 +193,43 @@ var isHappy = function (n) {
 };
 const n = 2;
 console.log(isHappy(n));
+
+// 118. Pascal's Triangle
+/**
+ * @param {number} numRows
+ * @return {number[][]}
+ */
+var generate = function (numRows) {};
+const numRows = 5;
+console.log(generate(numRows));
+
+// 70. Climbing Stairs
+/**
+ * @param {number} n
+ * @return {number}
+ */
+// way1: intuitive way
+var climbStairs = function (n) {
+  if (n < 3) {
+    return n;
+  }
+  return climbStairs(n - 1) + climbStairs(n - 2);
+};
+// way2: default memo, O(n) time complexity, O(n) space complexity
+var climbStairs = function (n, memo = { 1: 1, 2: 2 }) {
+  if (n in memo) {
+    return memo[n];
+  }
+  memo[n] = climbStairs(n - 1, memo) + climbStairs(n - 2, memo);
+  return memo[n];
+};
+// way3: swap, O(n) time complexity, O(1) space
+var climbStairs = function (n) {
+  let prev = 0,
+    curr = 1;
+  for (let i = 0; i < n; i++) {
+    [prev, curr] = [curr, prev + curr];
+  }
+  return curr;
+};
+console.log(climbStairs(4));
