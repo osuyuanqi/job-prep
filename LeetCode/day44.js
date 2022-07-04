@@ -199,7 +199,18 @@ console.log(isHappy(n));
  * @param {number} numRows
  * @return {number[][]}
  */
-var generate = function (numRows) {};
+var generate = function (numRows) {
+  const finalArr = [];
+  for (let i = 0; i < numRows; i++) {
+    // key part, generate another arr
+    finalArr[i] = [];
+    finalArr[i][0] = finalArr[i][i] = 1;
+    for (let j = 1; j < i; j++) {
+      finalArr[i][j] = finalArr[i - 1][j] + finalArr[i - 1][j - 1];
+    }
+  }
+  return finalArr;
+};
 const numRows = 5;
 console.log(generate(numRows));
 
