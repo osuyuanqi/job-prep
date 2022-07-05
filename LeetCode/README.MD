@@ -89,3 +89,5 @@
 - PyRev: followed by the "Python Programming and Text Processing" from [prof.Liang Huang](https://web.engr.oregonstate.edu/~huanlian/teaching/python-2012f/)
 
 - day44 (JS): 237, 122, 387, 108, 268, 168, 350, 202, 118, 70, 101
+
+- day45: 53, 326, 191, 198, 66, 1, 38, 26
