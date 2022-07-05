@@ -244,3 +244,29 @@ var climbStairs = function (n) {
   return curr;
 };
 console.log(climbStairs(4));
+
+// 101. Symmetric Tree
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {boolean}
+ */
+// check two sides, closure usage
+var isSymmetric = function (root) {
+  const checkMirror = (l, r) => {
+    if (!l || !r) return l === r;
+    return (
+      l.val === r.val &&
+      checkMirror(l.right, r.left) &&
+      checkMirror(l.left, r.right)
+    );
+  };
+  return checkMirror(root.left, root.right);
+};
