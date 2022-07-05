@@ -54,3 +54,30 @@ var isPowerOfThree = function (n) {
   return n === 1;
 };
 console.log(isPowerOfThree(9));
+
+// 191. Number of 1 Bits
+/**
+ * @param {number} n - a positive integer
+ * @return {number}
+ */
+var hammingWeight = function (n) {};
+console.log(hammingWeight(1));
+
+// 1. Two Sum
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function (nums, target) {
+  const dic = {};
+  for (let i = 0; i < nums.length; i++) {
+    if (target - nums[i] in dic) {
+      return [dic[target - nums[i]], i];
+    }
+    dic[nums[i]] = i;
+  }
+};
+const nums1 = [2, 7, 11, 15],
+  target = 9;
+console.log(twoSum(nums1, target));
