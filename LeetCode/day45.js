@@ -27,3 +27,30 @@ var maxSubArray = function (nums) {
 };
 const nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
 console.log(maxSubArray(nums));
+
+// 326. Power of Three
+/**
+ * @param {number} n
+ * @return {boolean}
+ */
+var isPowerOfThree = function (n) {
+  if (n === 0) return false;
+  if (n === 1) return true;
+  while (n !== 0) {
+    if (n % 3 === 0) {
+      n = Math.floor(n / 3);
+      if (n !== 1) continue;
+      else return true;
+    }
+    return false;
+  }
+  return true;
+};
+// much shorter logic
+var isPowerOfThree = function (n) {
+  if (n > 0) {
+    while (n % 3 === 0) n = Math.floor(n / 3);
+  }
+  return n === 1;
+};
+console.log(isPowerOfThree(9));
