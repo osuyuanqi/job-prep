@@ -81,3 +81,23 @@ var twoSum = function (nums, target) {
 const nums1 = [2, 7, 11, 15],
   target = 9;
 console.log(twoSum(nums1, target));
+
+// 26. Remove Duplicates from Sorted Array
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+
+// return # of unique, no matter what duplicates left behind
+var removeDuplicates = function (nums) {
+  let l = 1;
+  for (let r = 1; r < nums.length; r++) {
+    if (nums[r] != nums[r - 1]) {
+      nums[l] = nums[r];
+      l++;
+    }
+  }
+  return l;
+};
+const nums2 = [1, 1, 2];
+console.log(removeDuplicates(nums2));
