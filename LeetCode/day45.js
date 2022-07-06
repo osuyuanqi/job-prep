@@ -73,11 +73,11 @@ var hammingWeight = function (n) {
   while (n != 0) {
     // count #of 1===sum 1
     // last digit: 1011&1=>1,0,1,1
-    res+=n&1;
+    res += n & 1;
     n >>>= 1;
     console.log(n);
   }
-  return res
+  return res;
 };
 console.log(hammingWeight(11));
 
@@ -119,3 +119,40 @@ var removeDuplicates = function (nums) {
 };
 const nums2 = [1, 1, 2];
 console.log(removeDuplicates(nums2));
+
+// 66. Plus One
+/**
+ * @param {number[]} digits
+ * @return {number[]}
+ */
+// big int method
+var plusOne = function (digits) {
+  const total = digits.reduce((prev, curr) => (prev += curr.toString()), "");
+  // console.log(digits)
+  const intV = BigInt(total) + BigInt(1);
+  return intV
+    .toString()
+    .split("")
+    .map((a) => BigInt(a));
+};
+// test cases: 1.big #; 2.===9=>unshift; 3. <9=>+1 directly
+var plusOne = function (digits) {
+  let lenDig = digits.length - 1;
+  while (true) {
+    // lastElem++;
+    if (digits[lenDig] !== 9) {
+      digits[lenDig]++;
+      return digits;
+    } else {
+      digits[lenDig] = 0;
+      lenDig--;
+      if (lenDig < 0) {
+        digits.unshift(1);
+        return digits;
+      }
+    }
+  }
+};
+// const digits = [6, 1, 4, 5, 3, 9, 0, 1, 9, 5, 1, 8, 6, 7, 0, 5, 5, 4, 3];
+const digits = [8, 9, 9];
+console.log(plusOne(digits));
