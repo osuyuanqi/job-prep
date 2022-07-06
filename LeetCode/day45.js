@@ -60,8 +60,26 @@ console.log(isPowerOfThree(9));
  * @param {number} n - a positive integer
  * @return {number}
  */
-var hammingWeight = function (n) {};
-console.log(hammingWeight(1));
+var hammingWeight = function (n) {
+  n = n.toString(2);
+  let count = 0;
+  for (let i of n) {
+    if (i === "1") count++;
+  }
+  return count;
+};
+var hammingWeight = function (n) {
+  let res = 0;
+  while (n != 0) {
+    // count #of 1===sum 1
+    // last digit: 1011&1=>1,0,1,1
+    res+=n&1;
+    n >>>= 1;
+    console.log(n);
+  }
+  return res
+};
+console.log(hammingWeight(11));
 
 // 1. Two Sum
 /**
@@ -88,7 +106,7 @@ console.log(twoSum(nums1, target));
  * @return {number}
  */
 
-// return # of unique, no matter what duplicates left behind
+// two pointers: return # of unique, no matter what duplicates left behind
 var removeDuplicates = function (nums) {
   let l = 1;
   for (let r = 1; r < nums.length; r++) {
