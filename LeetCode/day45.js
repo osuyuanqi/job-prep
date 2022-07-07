@@ -156,3 +156,36 @@ var plusOne = function (digits) {
 // const digits = [6, 1, 4, 5, 3, 9, 0, 1, 9, 5, 1, 8, 6, 7, 0, 5, 5, 4, 3];
 const digits = [8, 9, 9];
 console.log(plusOne(digits));
+
+// 38. Count and Say
+/**
+ * @param {number} n
+ * @return {string}
+ */
+var countAndSay = function (n) {
+  let res = "1";
+  while (n > 1) {
+    let prev = res[0],
+      temp = "",
+      count = 0;
+    for (let i = 0; i < res.length; i++) {
+      console.log(prev, res[i]);
+      if (res[i] === prev) {
+        count++;
+      } else {
+        // store the previous result first
+        temp += count + prev;
+        // calc cur value as prev, since there's more than 1 elem
+        count = 1;
+        prev = res[i];
+      }
+    }
+    // console.log(count,prev)
+    // tip: -1
+    res = temp + count + prev;
+    n--;
+  }
+  return res;
+};
+
+console.log(countAndSay(4));
