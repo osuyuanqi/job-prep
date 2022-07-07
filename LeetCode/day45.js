@@ -162,6 +162,7 @@ console.log(plusOne(digits));
  * @param {number} n
  * @return {string}
  */
+// iterative
 var countAndSay = function (n) {
   let res = "1";
   while (n > 1) {
@@ -169,23 +170,42 @@ var countAndSay = function (n) {
       temp = "",
       count = 0;
     for (let i = 0; i < res.length; i++) {
-      console.log(prev, res[i]);
+      console.log(prev, res);
       if (res[i] === prev) {
         count++;
       } else {
         // store the previous result first
+        console.log(temp, count, prev, 90, i);
         temp += count + prev;
         // calc cur value as prev, since there's more than 1 elem
         count = 1;
         prev = res[i];
       }
     }
-    // console.log(count,prev)
+    console.log(count, prev, temp);
     // tip: -1
     res = temp + count + prev;
     n--;
   }
   return res;
 };
-
+// recursive
+var countAndSay = function (n, res = "1") {
+  if (n == 1) return res;
+  while (n > 1) {
+    let temp = "",
+      count = 0,
+      prev = res[0];
+    for (let i = 0; i < res.length; i++) {
+      if (res[i] === prev) {
+        count++;
+      } else {
+        temp += count + prev;
+        prev = res[i];
+        count = 1;
+      }
+    }
+    return countAndSay(n-1,temp+count+prev)
+  }
+};
 console.log(countAndSay(4));
