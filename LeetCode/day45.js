@@ -205,7 +205,36 @@ var countAndSay = function (n, res = "1") {
         count = 1;
       }
     }
-    return countAndSay(n-1,temp+count+prev)
+    return countAndSay(n - 1, temp + count + prev);
   }
 };
 console.log(countAndSay(4));
+
+// 198. House Robber
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+// swap skill
+var rob = function (nums) {
+  let prevM = 0,
+    currM = 0;
+  for (const i of nums) {
+    [prevM, currM] = [currM, Math.max(prevM + i, currM)];
+  }
+  return currM;
+};
+var rob = function (nums) {
+  let prevM = 0,
+    currM = 0;
+  // logic behind this
+  for (const i of nums) {
+    let temp = currM;
+    currM = Math.max(prevM + i, currM);
+    prevM = temp;
+    console.log(currM);
+  }
+  return currM;
+};
+const nums3 = [2, 7, 9, 3, 1];
+console.log(rob(nums3));
