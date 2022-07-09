@@ -36,8 +36,6 @@
 
 - day18: #139. Word Break **DP**, #371. Sum of Two Integers
 
-- day19: **(Convert to C#)** #28. Implement strStr()
-
 - day20: **(Convert to JS)** #53. Maximum Subarray, #38. Count and Say,#242. Valid Anagram,#202. Happy Number
 
 - day21: **(JS)** #217. Contains Duplicate, #118. Pascal's Triangle, #70. Climbing Stairs
@@ -91,3 +89,5 @@
 - day44 (JS): 237, 122, 387, 108, 268, 168, 350, 202, 118, 70, 101
 
 - day45: 53, 326, 191, 198, 66, 1, 38, 26
+
+- day46: 172, 20, 141, 234, 88, 155, 14, 160
