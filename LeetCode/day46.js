@@ -25,18 +25,56 @@ var getIntersectionNode = function (headA, headB) {
 };
 
 // hash map method
- var getIntersectionNode = function(headA, headB) {
-    const h1 = new Set();
+var getIntersectionNode = function (headA, headB) {
+  const h1 = new Set();
   while (headA) {
     h1.add(headA);
-    headA=headA.next;
+    headA = headA.next;
   }
-    // console.log(h1);
+  // console.log(h1);
   while (headB) {
     if (h1.has(headB)) {
-        return headB;
+      return headB;
     }
-    headB=headB.next;
+    headB = headB.next;
   }
   return null;
 };
+// 172. Factorial Trailing Zeroes
+/**
+ * @param {number} n
+ * @return {number}
+ */
+//5*2=10 is the unique key
+
+var trailingZeroes = function (n) {
+  let count = 0;
+  while (n > 0) {
+    n = Math.floor(n / 5);
+    count += n;
+  }
+  return count;
+};
+
+
+
+
+
+
+
+
+
+
+
+// tip: counts the # of 5, e.g.30=5*6, which comes 6's 5
+var trailingZeroes = function (n) {
+let count=0;
+while (n!=0){
+    n=Math.floor(n/5);
+    // e.g. 15=(5*3)*14..=
+    console.log(n)
+    count+=n;
+}
+return count;
+}
+console.log(trailingZeroes(15));
