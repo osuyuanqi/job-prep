@@ -45,36 +45,46 @@ var getIntersectionNode = function (headA, headB) {
  * @param {number} n
  * @return {number}
  */
-//5*2=10 is the unique key
 
+// not works in big# pow
+var trailingZeroes = function (n) {
+  let pow = 1,
+    res = 0;
+  for (let i = 2; i <= n; i++) {
+    pow *= i;
+  }
+  console.log(pow % 10);
+  while (pow % 10 === 0) {
+    res++;
+    pow = Math.floor(pow / 10);
+    console.log(res);
+  }
+  return res;
+};
+// way1:
+//tip: 1.# of 2>># of 5 => calculate 5 only
+// 2. counts the total # of 5, e.g.25= (#5) * 5 + #1 * (#5)=6' 5, which comes 6's 5
 var trailingZeroes = function (n) {
   let count = 0;
-  while (n > 0) {
+  while (n != 0) {
     n = Math.floor(n / 5);
+    // e.g. 15=(5*3)*14..=
+    // 25 = 5*5, #1 of 5 left after first loop
+    console.log(n);
     count += n;
   }
   return count;
 };
-
-
-
-
-
-
-
-
-
-
-
-// tip: counts the # of 5, e.g.30=5*6, which comes 6's 5
+// way2: concers # of 5 only
 var trailingZeroes = function (n) {
-let count=0;
-while (n!=0){
-    n=Math.floor(n/5);
-    // e.g. 15=(5*3)*14..=
-    console.log(n)
-    count+=n;
-}
-return count;
-}
-console.log(trailingZeroes(15));
+  let res = 0;
+  for (let i = 5; i <= n; i += 5) {
+    let j = i;
+    while (j % 5 === 0) {
+      res++;
+      j = Math.floor(j / 5);
+    }
+  }
+  return res;
+};
+console.log(trailingZeroes(25));
