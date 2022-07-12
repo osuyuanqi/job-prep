@@ -156,3 +156,22 @@ var hasCycle = function(head) {
     }
     return false;
 };
+
+//88. Merge Sorted Array
+/**
+ * @param {number[]} nums1
+ * @param {number} m
+ * @param {number[]} nums2
+ * @param {number} n
+ * @return {void} Do not return anything, modify nums1 in-place instead.
+ */
+ var merge = function(nums1, m, nums2, n) {
+    for(let i=0;i<n;i++){
+        // the (m+i)th value in nums1
+        nums1[m+i]=nums2[i];
+    }
+    nums1.sort((a,b)=>a-b);
+};
+const nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3;
+console.log(merge(nums1,m,nums2,n))
+console.log(nums1)
