@@ -87,7 +87,7 @@ var trailingZeroes = function (n) {
   }
   return res;
 };
-// way3: optimization 
+// way3: optimization
 var trailingZeroes = function (n) {
   let res = 0;
   for (let i = 5; i <= n; i = i * 5) {
@@ -96,3 +96,24 @@ var trailingZeroes = function (n) {
   return res;
 };
 console.log(trailingZeroes(25));
+
+// 20. Valid Parentheses
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+
+var isValid = function (s) {
+  const dic = { "}": "{", ")": "(", "]": "[" },
+    stack = [];
+  for (const i of s) {
+    if (i in dic) {
+      if (stack.pop() !== dic[i]) return false;
+    } else {
+      stack.push(i);
+    }
+  }
+  return stack.length === 0;
+};
+const s = "()";
+console.log(isValid(s));
