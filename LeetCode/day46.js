@@ -117,3 +117,42 @@ var isValid = function (s) {
 };
 const s = "()";
 console.log(isValid(s));
+
+// 141. Linked List Cycle
+
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+
+/**
+ * @param {ListNode} head
+ * @return {boolean}
+ */
+// way1: hash
+ var hasCycle = function(head) {
+    const dic=new Set();
+    while(head){
+        if(dic.has(head))
+            return true;
+        dic.add(head);
+        head=head.next;
+    }
+     return false;
+ };
+// way2: two pointers
+var hasCycle = function(head) {
+    let fast=head,slow=head;
+    while(fast && fast.next){
+        // if ignore fast only. e.g.[1,2]=>fast.next.next===none, then none.next is not exist
+        fast = fast.next.next;
+        slow = slow.next;
+        if (slow ===fast){
+            return true;
+        }
+    }
+    return false;
+};
