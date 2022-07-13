@@ -133,28 +133,28 @@ console.log(isValid(s));
  * @return {boolean}
  */
 // way1: hash
- var hasCycle = function(head) {
-    const dic=new Set();
-    while(head){
-        if(dic.has(head))
-            return true;
-        dic.add(head);
-        head=head.next;
-    }
-     return false;
- };
+var hasCycle = function (head) {
+  const dic = new Set();
+  while (head) {
+    if (dic.has(head)) return true;
+    dic.add(head);
+    head = head.next;
+  }
+  return false;
+};
 // way2: two pointers
-var hasCycle = function(head) {
-    let fast=head,slow=head;
-    while(fast && fast.next){
-        // if ignore fast only. e.g.[1,2]=>fast.next.next===none, then none.next is not exist
-        fast = fast.next.next;
-        slow = slow.next;
-        if (slow ===fast){
-            return true;
-        }
+var hasCycle = function (head) {
+  let fast = head,
+    slow = head;
+  while (fast && fast.next) {
+    // if ignore fast only. e.g.[1,2]=>fast.next.next===none, then none.next is not exist
+    fast = fast.next.next;
+    slow = slow.next;
+    if (slow === fast) {
+      return true;
     }
-    return false;
+  }
+  return false;
 };
 
 //88. Merge Sorted Array
@@ -165,13 +165,66 @@ var hasCycle = function(head) {
  * @param {number} n
  * @return {void} Do not return anything, modify nums1 in-place instead.
  */
- var merge = function(nums1, m, nums2, n) {
-    for(let i=0;i<n;i++){
-        // the (m+i)th value in nums1
-        nums1[m+i]=nums2[i];
-    }
-    nums1.sort((a,b)=>a-b);
+var merge = function (nums1, m, nums2, n) {
+  for (let i = 0; i < n; i++) {
+    // the (m+i)th value in nums1
+    nums1[m + i] = nums2[i];
+  }
+  nums1.sort((a, b) => a - b);
 };
-const nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3;
-console.log(merge(nums1,m,nums2,n))
-console.log(nums1)
+const nums1 = [1, 2, 3, 0, 0, 0],
+  m = 3,
+  nums2 = [2, 5, 6],
+  n = 3;
+console.log(merge(nums1, m, nums2, n));
+console.log(nums1);
+
+// 155. Min Stack
+// this usage is the key1
+var MinStack = function () {
+  this.stack = [];
+  this.minStack = [];
+};
+
+/**
+ * @param {number} val
+ * @return {void}
+ */
+MinStack.prototype.push = function (val) {
+  this.stack.push(val);
+  // use length to judge is the key2
+  if (this.minStack.length !== 0)
+    this.minStack.push(Math.min(val, this.minStack[this.minStack.length - 1]));
+  else this.minStack.push(val);
+};
+
+/**
+ * @return {void}
+ */
+MinStack.prototype.pop = function () {
+  this.stack.pop();
+  this.minStack.pop();
+};
+
+/**
+ * @return {number}
+ */
+MinStack.prototype.top = function () {
+  return this.stack[this.stack.length - 1];
+};
+
+/**
+ * @return {number}
+ */
+MinStack.prototype.getMin = function () {
+  return this.minStack[this.minStack.length - 1];
+};
+
+/**
+ * Your MinStack object will be instantiated and called as such:
+ * var obj = new MinStack()
+ * obj.push(val)
+ * obj.pop()
+ * var param_3 = obj.top()
+ * var param_4 = obj.getMin()
+ */
