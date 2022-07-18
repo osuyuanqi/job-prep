@@ -1,45 +1,3 @@
-// 160. Intersection of Two Linked Lists
-/**
- * Definition for singly-linked list.
- * function ListNode(val) {
- *     this.val = val;
- *     this.next = null;
- * }
- */
-
-/**
- * @param {ListNode} headA
- * @param {ListNode} headB
- * @return {ListNode}
- */
-// infinite loop if no intersect
-var getIntersectionNode = function (headA, headB) {
-  let l1 = headA,
-    l2 = headB;
-  while (l1 !== l2) {
-    // transition to the headB, not l2, since l2 is changing.
-    l1 = l1 ? l1.next : headB;
-    l2 = l2 ? l2.next : headA;
-  }
-  return l1;
-};
-
-// hash map method
-var getIntersectionNode = function (headA, headB) {
-  const h1 = new Set();
-  while (headA) {
-    h1.add(headA);
-    headA = headA.next;
-  }
-  // console.log(h1);
-  while (headB) {
-    if (h1.has(headB)) {
-      return headB;
-    }
-    headB = headB.next;
-  }
-  return null;
-};
 // 172. Factorial Trailing Zeroes
 /**
  * @param {number} n
@@ -156,8 +114,57 @@ var hasCycle = function (head) {
   }
   return false;
 };
-
-//88. Merge Sorted Array
+// 234. Palindrome Linked List
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {boolean}
+ */
+var isPalindrome = function (head) {
+  // two pointers:
+  // 1. find mid point
+  let slow = head,
+    fast = head;
+  // fast.next => skip 1 elem condition
+  while (fast && fast.next) {
+    slow = slow.next;
+    fast = fast.next.next;
+  }
+  // console.log(slow, head);
+  // odd condition=>need to move to the next; e.g.[1,3,1]=>move to the 3rd 1
+  if (fast) {
+    slow = slow.next;
+    // console.log("slow", slow);
+  }
+  // 2. reverse the slow
+  // must have a new place to store the result, since slow would be null in the end
+  let prev = null;
+  while (slow) {
+    let temp = slow.next;
+    slow.next = prev;
+    // move the prev to the current slow
+    prev = slow;
+    // move to the next
+    slow = temp;
+  }
+  // console.log(slow, "111");
+  // 3. compare the after and head first, slow is the mid
+  while (prev) {
+    if (head.val !== prev.val) {
+      return false;
+    }
+    head = head.next;
+    prev = prev.next;
+  }
+  return true;
+};
+// 88. Merge Sorted Array
 /**
  * @param {number[]} nums1
  * @param {number} m
@@ -228,3 +235,46 @@ MinStack.prototype.getMin = function () {
  * var param_3 = obj.top()
  * var param_4 = obj.getMin()
  */
+// 14.
+// 160. Intersection of Two Linked Lists
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+
+/**
+ * @param {ListNode} headA
+ * @param {ListNode} headB
+ * @return {ListNode}
+ */
+// infinite loop if no intersect
+var getIntersectionNode = function (headA, headB) {
+  let l1 = headA,
+    l2 = headB;
+  while (l1 !== l2) {
+    // transition to the headB, not l2, since l2 is changing.
+    l1 = l1 ? l1.next : headB;
+    l2 = l2 ? l2.next : headA;
+  }
+  return l1;
+};
+
+// hash map method
+var getIntersectionNode = function (headA, headB) {
+  const h1 = new Set();
+  while (headA) {
+    h1.add(headA);
+    headA = headA.next;
+  }
+  // console.log(h1);
+  while (headB) {
+    if (h1.has(headB)) {
+      return headB;
+    }
+    headB = headB.next;
+  }
+  return null;
+};
