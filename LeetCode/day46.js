@@ -252,37 +252,17 @@ var longestCommonPrefix = function (strs) {
 };
 
 var longestCommonPrefix = function (strs) {
-  let res = strs[0];
+  let res=strs[0];
+  console.log(res);
   for (let i = 1; i < strs.length; i++) {
-    // console.log(strs[i]);
-
-    // console.log(res.length);
-    // console.log(strs[i].slice(0,res.length),res.slice(0,res.length)
-    while (strs[i].slice(0, res.length) !== res.slice(0, res.length)) {
-      // res.length--; not correct since string is immutable
+    while (res.slice(0, res.length) !== strs[i].slice(0, res.length)) {
       res = res.slice(0, res.length - 1);
     }
-    // for (let j = 0; j < res.length; j++) {
-    //   console.log(strs[i].slice(0,j),res.slice(0,j));
-
-    //   if (strs[i].slice(0, j) !== res.slice(0, j)) {
-    //     // res = res.slice(0, j -1);
-    //     // console.log(strs[i].slice(0,j),res.slice(0,j));
-    //     break;
-    //   }
-    //   else{
-    //     res = res.slice(0, j);
-    //     console.log(res);
-    //     continue
-    //   }
-    // console.log(res);
-    // }
-    // console.log(res);
   }
   return res;
 };
-// const strs = ["flower", "flow", "flight"];
-const strs = ["ab", "a"];
+const strs = ["flower", "flow", "flight"];
+// const strs = ["reflower", "flow", "flight"];
 console.log(longestCommonPrefix(strs));
 // 160. Intersection of Two Linked Lists
 /**
