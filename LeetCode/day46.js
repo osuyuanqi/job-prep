@@ -77,7 +77,6 @@ const s = "()";
 console.log(isValid(s));
 
 // 141. Linked List Cycle
-
 /**
  * Definition for singly-linked list.
  * function ListNode(val) {
@@ -235,7 +234,56 @@ MinStack.prototype.getMin = function () {
  * var param_3 = obj.top()
  * var param_4 = obj.getMin()
  */
-// 14.
+// 14. Longest Common Prefix
+/**
+ * @param {string[]} strs
+ * @return {string}
+ */
+// vertical
+var longestCommonPrefix = function (strs) {
+  let res = strs[0];
+  for (let i = 1; i < strs.length; i++) {
+    while (strs[i].slice(0, res.length) !== res.slice(0, res.length)) {
+      // res.length--; not correct since string is immutable
+      res = res.slice(0, res.length - 1);
+    }
+  }
+  return res;
+};
+
+var longestCommonPrefix = function (strs) {
+  let res = strs[0];
+  for (let i = 1; i < strs.length; i++) {
+    // console.log(strs[i]);
+
+    // console.log(res.length);
+    // console.log(strs[i].slice(0,res.length),res.slice(0,res.length)
+    while (strs[i].slice(0, res.length) !== res.slice(0, res.length)) {
+      // res.length--; not correct since string is immutable
+      res = res.slice(0, res.length - 1);
+    }
+    // for (let j = 0; j < res.length; j++) {
+    //   console.log(strs[i].slice(0,j),res.slice(0,j));
+
+    //   if (strs[i].slice(0, j) !== res.slice(0, j)) {
+    //     // res = res.slice(0, j -1);
+    //     // console.log(strs[i].slice(0,j),res.slice(0,j));
+    //     break;
+    //   }
+    //   else{
+    //     res = res.slice(0, j);
+    //     console.log(res);
+    //     continue
+    //   }
+    // console.log(res);
+    // }
+    // console.log(res);
+  }
+  return res;
+};
+// const strs = ["flower", "flow", "flight"];
+const strs = ["ab", "a"];
+console.log(longestCommonPrefix(strs));
 // 160. Intersection of Two Linked Lists
 /**
  * Definition for singly-linked list.
