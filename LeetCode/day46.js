@@ -239,7 +239,7 @@ MinStack.prototype.getMin = function () {
  * @param {string[]} strs
  * @return {string}
  */
-// vertical
+// vertical => slice from every elem
 var longestCommonPrefix = function (strs) {
   let res = strs[0];
   for (let i = 1; i < strs.length; i++) {
@@ -250,19 +250,24 @@ var longestCommonPrefix = function (strs) {
   }
   return res;
 };
-
+// horizontal=>from 0-> max length
 var longestCommonPrefix = function (strs) {
-  let res=strs[0];
-  console.log(res);
+  let longest = strs[0];
   for (let i = 1; i < strs.length; i++) {
-    while (res.slice(0, res.length) !== strs[i].slice(0, res.length)) {
-      res = res.slice(0, res.length - 1);
+    let newLongest = "";
+    for (let j = 0; j < longest.length; j++) {
+      if (longest[j] === strs[i][j]) newLongest += longest[j];
+      else {
+        break;
+      }
     }
+    longest = newLongest;
   }
-  return res;
+  return longest;
 };
 const strs = ["flower", "flow", "flight"];
 // const strs = ["reflower", "flow", "flight"];
+// const strs=["cir","car"]
 console.log(longestCommonPrefix(strs));
 // 160. Intersection of Two Linked Lists
 /**
