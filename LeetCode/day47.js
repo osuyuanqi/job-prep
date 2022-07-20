@@ -4,6 +4,7 @@
  * @param {string} needle
  * @return {number}
  */
+//math tip
 var strStr = function (haystack, needle) {
   let maxLen = haystack.length - needle.length + 1;
   if (maxLen > 0) {
@@ -16,6 +17,6 @@ var strStr = function (haystack, needle) {
   }
   return -1;
 };
-const haystack = "aaaaa",
-  needle = "aaaaa";
+const haystack = "hello",
+  needle = "ll";
 console.log(strStr(haystack, needle));
