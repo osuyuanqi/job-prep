@@ -26,24 +26,34 @@ console.log(strStr(haystack, needle));
  * @param {number} x
  * @return {number}
  */
+var mySqrt = function (x) {
+  let res = 1;
+  while (res * res < x) {
+    res++;
+  }
+  return res * res === x ? res : res - 1;
+};
+
 // binary cut
 var mySqrt = function (x) {
   let low = 0,
     high = x,
     p = 0;
-  console.log(low, high);
+  // console.log(low, high);
   while (low <= high) {
-    const mid = Math.floor(low + high);
-    if (mid * mid > x) {
-      high--;
-    } else if (mid * mid < x) {
+    const mid = Math.floor((low + high) / 2);
+    let m = mid * mid;
+    if (m > x) {
+      high = mid - 1;
+    } else if (m < x) {
       // store the lowest val
       p = mid;
       low = mid + 1;
     } else {
-      high = mid - 1;
+      return mid;
     }
   }
   return p;
 };
-console.log(mySqrt(16));
+
+console.log(mySqrt(214739560));
