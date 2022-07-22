@@ -20,3 +20,30 @@ var strStr = function (haystack, needle) {
 const haystack = "hello",
   needle = "ll";
 console.log(strStr(haystack, needle));
+
+// 69. Sqrt(x)
+/**
+ * @param {number} x
+ * @return {number}
+ */
+// binary cut
+var mySqrt = function (x) {
+  let low = 0,
+    high = x,
+    p = 0;
+  console.log(low, high);
+  while (low <= high) {
+    const mid = Math.floor(low + high);
+    if (mid * mid > x) {
+      high--;
+    } else if (mid * mid < x) {
+      // store the lowest val
+      p = mid;
+      low = mid + 1;
+    } else {
+      high = mid - 1;
+    }
+  }
+  return p;
+};
+console.log(mySqrt(16));
