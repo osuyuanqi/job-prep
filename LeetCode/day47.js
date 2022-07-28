@@ -56,4 +56,28 @@ var mySqrt = function (x) {
   return p;
 };
 
-console.log(mySqrt(214739560));
+console.log(mySqrt(9));
+
+// 190. Reverse Bits
+// 704. Binary Search
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */
+var search = function (nums, target) {
+  let low = 0,
+    high = nums.length-1;
+  while (low <= high) {
+    const mid = Math.floor((low + high) / 2);
+    if (nums[mid] < target) {
+      low = mid + 1;
+    } else if (nums[mid] > target) {
+      high = mid - 1;
+    } else return mid;
+  }
+  return -1;
+};
+const nums = [-1, 0, 3, 5, 9, 12],
+  target = 9;
+console.log(search(nums, target));
