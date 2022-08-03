@@ -59,6 +59,23 @@ var mySqrt = function (x) {
 console.log(mySqrt(9));
 
 // 190. Reverse Bits
+/**
+ * @param {number} n - a positive integer
+ * @return {number} - a positive integer
+ */
+var reverseBits = function (n) {
+  // padStart(32,'0'), start with 0, the total is 32 bits.
+  let str = parseInt(n)
+    .toString(2)
+    .padStart(32, "0")
+    .split("")
+    .reverse()
+    .join("");
+  return parseInt(str, 2);
+  console.log(parseInt(str, 2));
+};
+const n = "00000010100101000001111010011100";
+console.log(reverseBits(n));
 // 704. Binary Search
 /**
  * @param {number[]} nums
@@ -67,7 +84,7 @@ console.log(mySqrt(9));
  */
 var search = function (nums, target) {
   let low = 0,
-    high = nums.length-1;
+    high = nums.length - 1;
   while (low <= high) {
     const mid = Math.floor((low + high) / 2);
     if (nums[mid] < target) {
